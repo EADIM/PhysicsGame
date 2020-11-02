@@ -194,11 +194,13 @@ public class Fase02_GameState : MonoBehaviour
 
     private void ResumeUIElements()
     {
+        GetComponent<Fase02_ToggleInputField>().canShow = true;
         GamePause.ResumeGame();
         GameObject buttons = Utils.GetChildWithName(Canvas.gameObject, "Buttons");
         buttons.GetComponent<ToggleUIElement>().Show();
         GameObject pauseMenu = Utils.GetChildWithName(Canvas.gameObject, "Pause Menu");
         pauseMenu.GetComponent<ToggleUIElement>().Hide();
+
     }
 
     public void FreezeUI()
