@@ -33,7 +33,7 @@ public class Fase02_BoxCollider : MonoBehaviour
             float Vz = V * angleCos;
 
 
-            Debug.Log("Massa da bola: " + ballMass + " --- Massa da caixa: " + boxMass);
+            //Debug.Log("Massa da bola: " + ballMass + " --- Massa da caixa: " + boxMass);
             /*Debug.Log("Velocidade: " + V);
             Debug.Log("Vy: " + Vy + " --- Vz: " + Vz);*/
 
@@ -46,7 +46,8 @@ public class Fase02_BoxCollider : MonoBehaviour
             //4.98f*ballMass
             //ouro: 1.7654f
             //semiOuro: 8.827f
-            float value = 1.7654f * ballMass * transform.localScale.x;
+            //ouro2.0 = 0.8827f
+            float value = 1.218f * ballMass * transform.localScale.x;
 
             Vector3 unidade = value*diagonal;
 

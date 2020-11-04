@@ -4942,7 +4942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218196166}
   m_LocalRotation: {x: -0.16831723, y: 0, z: 0, w: 0.98573285}
-  m_LocalPosition: {x: 60.7, y: 116.6, z: -233.9}
+  m_LocalPosition: {x: 60.7, y: 116.55, z: -234.03}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 545185234}
@@ -5016,7 +5016,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218196166}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -5675,7 +5675,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232713163}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -19616,7 +19616,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4797762519444804235}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -24473,7 +24473,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1563107960}
   m_HandleRect: {fileID: 1563107959}
   m_Direction: 2
-  m_Value: 0.99999976
+  m_Value: 0.9999995
   m_Size: 0.61786944
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -28926,9 +28926,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848108015162390}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -30601,7 +30601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386859992}
   m_LocalRotation: {x: -0, y: 0.22635075, z: -0, w: 0.97404593}
-  m_LocalPosition: {x: 10.37, y: 51.79, z: 105.96}
+  m_LocalPosition: {x: 0.2, y: 51.79, z: 104.4}
   m_LocalScale: {x: 2.4594223, y: 2.4594223, z: 2.4594223}
   m_Children:
   - {fileID: 1709320286}
@@ -31606,7 +31606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1429570393
 Transform:
   m_ObjectHideFlags: 0
@@ -33240,8 +33240,8 @@ GameObject:
   - component: {fileID: 1543065507}
   - component: {fileID: 1543065506}
   - component: {fileID: 1543065505}
-  - component: {fileID: 1543065509}
   - component: {fileID: 1543065510}
+  - component: {fileID: 1543065509}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -33257,7 +33257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543065503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -113.99, y: 228.1, z: -917.52}
+  m_LocalPosition: {x: -131.27, y: 228.1, z: -917.52}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1960501285}
@@ -33271,7 +33271,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543065503}
   serializedVersion: 2
-  m_Mass: 30
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -36685,7 +36685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682282614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.733, y: 51.458817, z: 63.232006}
+  m_LocalPosition: {x: 18.733, y: 51.47, z: 63.232006}
   m_LocalScale: {x: 5.3821154, y: 1, z: 9.983626}
   m_Children: []
   m_Father: {fileID: 1667271923}
@@ -45858,7 +45858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848108015162390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -131.6, y: 287, z: -848.5}
+  m_LocalPosition: {x: -131.6, y: 298, z: -848.5}
   m_LocalScale: {x: 6.4321485, y: 6.4321485, z: 6.4321485}
   m_Children: []
   m_Father: {fileID: 1960501285}
@@ -46874,7 +46874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8450142266690710740}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 11.820114, y: 11.179489, z: -31.343765}
+  m_LocalPosition: {x: -56, y: 11.179489, z: -31.343765}
   m_LocalScale: {x: 138.20241, y: 138.20241, z: 138.20241}
   m_Children: []
   m_Father: {fileID: 1429570393}
@@ -47864,9 +47864,8 @@ GameObject:
   - component: {fileID: 4836784936651054791}
   - component: {fileID: 4486905712576095473}
   - component: {fileID: 7888118048145479688}
-  - component: {fileID: 8450142266690710744}
   - component: {fileID: 8450142266690710743}
-  - component: {fileID: 8450142266690710742}
+  - component: {fileID: 8450142266690710744}
   - component: {fileID: 8450142266690710741}
   m_Layer: 0
   m_Name: Soccer_Ball
@@ -47887,18 +47886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76dd011e57597ac40980a63968b8200b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8450142266690710742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8450142266690710740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1681cce0f40763f46b9c264c96763ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &8450142266690710743
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47910,7 +47897,7 @@ Rigidbody:
   m_Mass: 30
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -47926,8 +47913,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.034432158
+  m_Center: {x: 0.000000029802322, y: -0.000000834465, z: 0.034490056}
 --- !u!33 &8469592811612775155
 MeshFilter:
   m_ObjectHideFlags: 0
