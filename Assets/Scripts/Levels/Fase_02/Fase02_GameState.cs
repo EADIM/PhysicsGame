@@ -125,9 +125,9 @@ public class Fase02_GameState : MonoBehaviour
         ResumeUIElements();
         GameObject joysticks_container = Utils.GetChildWithName(Canvas.gameObject, "Joysticks Container");
         joysticks_container.GetComponent<ToggleUIElement>().Hide();
-        //GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
-        //levelStats.GetComponent<ToggleUIElement>().Show();
-        //inputfieldUI.Hide();
+        GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
+        levelStats.GetComponent<ToggleUIElement>().Show();
+        inputfieldUI.Hide();
         GameObject buttons = Utils.GetChildWithName(Canvas.gameObject, "Buttons");
         GameObject buttons_helpButton = Utils.GetChildWithName(buttons, "Help");
         buttons_helpButton.GetComponent<ToggleUIElement>().Hide();
@@ -152,9 +152,9 @@ public class Fase02_GameState : MonoBehaviour
     {
         GameObject buttons = Utils.GetChildWithName(Canvas.gameObject, "Buttons");
         buttons.GetComponent<ToggleUIElement>().Hide();
-        //inputfieldUI.Hide();
-        //GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
-        //levelStats.GetComponent<ToggleUIElement>().Hide();
+        inputfieldUI.Hide();
+        GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
+        levelStats.GetComponent<ToggleUIElement>().Hide();
         GameObject joysticks_container = Utils.GetChildWithName(Canvas.gameObject, "Joysticks Container");
         joysticks_container.GetComponent<ToggleUIElement>().Hide();
         GameObject winnerWindow = Utils.GetChildWithName(Canvas.gameObject, "Winner Window");
