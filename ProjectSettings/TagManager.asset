@@ -18,6 +18,7 @@ TagManager:
   - Boundaries
   - PlayerEyes
   - Objetctive Button
+  - Box
   layers:
   - Default
   - TransparentFX

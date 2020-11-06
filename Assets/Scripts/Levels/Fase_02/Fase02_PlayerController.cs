@@ -217,13 +217,13 @@ public class Fase02_PlayerController : PlayerBase_fase02
         PreviousPosition = CurrentPosition;
         CurrentPosition = transform.position;
 
-        if ( GSReference.States[GSReference.getSimulationName()] )
+        /*if ( GSReference.States[GSReference.getSimulationName()] )
         {
             if (IsPlayerOnInitialPlatform)
             {
                 Run();
             }
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -291,7 +291,9 @@ public class Fase02_PlayerController : PlayerBase_fase02
         }
     }
 
-
+    public void setMassValue(float value){
+        PlayerRigidbody.mass = value;
+    }
 
     //Set values using float
     public void setAcceleration(float value){
@@ -299,9 +301,11 @@ public class Fase02_PlayerController : PlayerBase_fase02
     }
     public void setBallMass(float value){
         _ball_mass = value;
+        setMassValue(value);
     }
     public void setBoxMass(float value){
         _box_mass = value;
+        setMassValue(value);
     }
     public void setGravity(float value){
         _gravity = value;
@@ -313,6 +317,7 @@ public class Fase02_PlayerController : PlayerBase_fase02
     }
     public void setBallMass(string value){
         _ball_mass = ParseValue(value);
+        setMassValue(_ball_mass);
     }
 
     public void setGravity(string value){
@@ -321,5 +326,6 @@ public class Fase02_PlayerController : PlayerBase_fase02
     
     public void setBoxMass(string value){
         _box_mass = ParseValue(value);
+        setMassValue(_box_mass);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fase02_GetValueFromPlayer : MonoBehaviour
 {
-    public Fase01_References references;
+    public Fase02_References references;
 
     private Fase02_PlayerController sim;
     public int attribute = 0;
@@ -19,18 +19,14 @@ public class Fase02_GetValueFromPlayer : MonoBehaviour
 
     private float getAttribute(){
         float value = 0.0f;
-        if (attribute == 0){
+        if (attribute == 0)
             value = sim.Acceleration;
-        }
-        else if (attribute == 1){
+        else if (attribute == 1)
             value = sim.Box_mass;
-        }
-        else if (attribute == 2){
+        else if (attribute == 2)
             value = Mathf.Abs(sim.Gravity);
-        }
-        else if (attribute == 3){
+        else if (attribute == 3)
             value = sim.Ball_mass;
-        }
 
         return value;
     }

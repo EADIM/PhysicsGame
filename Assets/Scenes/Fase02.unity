@@ -3236,15 +3236,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: changeState
-        m_Mode: 1
+      - m_Target: {fileID: 2011454023}
+        m_MethodName: SwitchState
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Simulation
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2078413579}
@@ -9443,7 +9443,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1668992671}
+      - m_Target: {fileID: 2049632063}
         m_MethodName: SetText
         m_Mode: 0
         m_Arguments:
@@ -10999,8 +10999,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 930313144}
   m_HandleRect: {fileID: 930313143}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.7202696
+  m_Value: 0.99999964
+  m_Size: 0.72026956
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -22780,8 +22780,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1489474118}
   m_HandleRect: {fileID: 1489474117}
   m_Direction: 2
-  m_Value: 0.9999999
-  m_Size: 0.5417762
+  m_Value: 0.9999996
+  m_Size: 0.5417761
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24474,7 +24474,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1563107959}
   m_Direction: 2
   m_Value: 0.9999995
-  m_Size: 0.61786944
+  m_Size: 0.6178694
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -27279,8 +27279,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 458833465}
   m_HandleRect: {fileID: 458833464}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.6792313
+  m_Value: 0.99999964
+  m_Size: 0.6792312
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -33363,6 +33363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76dd011e57597ac40980a63968b8200b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  references: {fileID: 2011454022}
 --- !u!1 &1546411053
 GameObject:
   m_ObjectHideFlags: 0
@@ -41940,6 +41941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581fbf781d23f9941b540c417142dce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Box: {fileID: 1848108015162390}
   Player: {fileID: 1334847925}
   PlataformaInicial: {fileID: 1462935235}
   PlataformaFinal: {fileID: 167655953}
@@ -45772,9 +45774,10 @@ GameObject:
   - component: {fileID: 1848108015162391}
   - component: {fileID: 1848108015162392}
   - component: {fileID: 1848108015162393}
+  - component: {fileID: 1848108015162394}
   m_Layer: 0
-  m_Name: PowerCore_02_snaps002
-  m_TagString: Untagged
+  m_Name: Box
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45817,6 +45820,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76dd011e57597ac40980a63968b8200b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  references: {fileID: 2011454022}
+--- !u!114 &1848108015162394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848108015162390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde2801e0d830bd4c9e533a8745cf417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  references: {fileID: 2011454022}
+  StartPlatformPosition: 0
+  TimeSpanned: 0
+  IsMoving: 0
+  JumpedMid: 0
+  jumpstates: 0
+  RunAnimationName: is_running
+  JumpAnimationName: is_going_upwards
+  WinAnimationName: did_win
+  IsPlayerOnInitialPlatform: 1
 --- !u!1 &1938284073539589
 GameObject:
   m_ObjectHideFlags: 0
@@ -47886,6 +47912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76dd011e57597ac40980a63968b8200b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  references: {fileID: 0}
 --- !u!54 &8450142266690710743
 Rigidbody:
   m_ObjectHideFlags: 0
