@@ -10999,7 +10999,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 930313144}
   m_HandleRect: {fileID: 930313143}
   m_Direction: 2
-  m_Value: 0.99999964
+  m_Value: 1
   m_Size: 0.72026956
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -27279,7 +27279,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 458833465}
   m_HandleRect: {fileID: 458833464}
   m_Direction: 2
-  m_Value: 0.99999964
+  m_Value: 0.9999998
   m_Size: 0.6792312
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -46200,6 +46200,7 @@ GameObject:
   - component: {fileID: 1051017830023088761}
   - component: {fileID: 8626458085692384905}
   - component: {fileID: 787280115272276509}
+  - component: {fileID: 787280115272276510}
   m_Layer: 0
   m_Name: default
   m_TagString: Objetctive Button
@@ -46221,6 +46222,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 01ddc3ddf5cff9b418b11dc4306a3013, type: 3}
+--- !u!114 &787280115272276510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787280115272276508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f357d1555bc496745bbfdeee61d8c471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1051017830023088761
 MeshFilter:
   m_ObjectHideFlags: 0
