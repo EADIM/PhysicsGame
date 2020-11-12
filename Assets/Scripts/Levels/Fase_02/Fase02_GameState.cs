@@ -34,7 +34,7 @@ public class Fase02_GameState : MonoBehaviour
     private void Awake()
     {
         InitializeStates();    
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
     }
     
     private void Start() 
@@ -127,13 +127,14 @@ public class Fase02_GameState : MonoBehaviour
         joysticks_container.GetComponent<ToggleUIElement>().Hide();
         GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
         levelStats.GetComponent<ToggleUIElement>().Show();
-        inputfieldUI.Hide();
         GameObject buttons = Utils.GetChildWithName(Canvas.gameObject, "Buttons");
         GameObject buttons_helpButton = Utils.GetChildWithName(buttons, "Help");
         buttons_helpButton.GetComponent<ToggleUIElement>().Hide();
         GameObject buttons_playButton = Utils.GetChildWithName(buttons, "Play Button");
         GameObject buttons_playButton_text = Utils.GetChildWithName(buttons_playButton.gameObject, "Text");
         buttons_playButton_text.GetComponent<TMPro.TMP_Text>().text = "STOP";
+        GameObject inputField = Utils.GetChildWithName(Canvas.gameObject, "Input Container");
+        inputField.GetComponent<ToggleUIElement>().Hide();
     }
 
     private void changePause()

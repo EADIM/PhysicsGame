@@ -240,57 +240,6 @@ public class Fase02_PlayerController : PlayerBase_fase02
 
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        string tag = other.transform.tag;
-        string name = other.transform.name;
-
-        //Debug.LogFormat("tag = {0}  name = {1}", tag, name);
-
-        if(CollidablePlaces[tag])
-        {
-            // If collided with authorized object
-            if (tag == "StartPlatform")
-            {
-                Debug.Log("Shazum");
-            }
-        }
-        else{
-            // If collided with forbidden object
-            GSReference.SwitchState(GSReference.getLostName());
-        }
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-        string tag = other.transform.tag;
-        bool onSimulation = GSReference.States[GSReference.getSimulationName()];
-
-        if(CollidablePlaces[tag]) // If is colliding with authorized object
-        {
-            if (tag == "StartPlatform") // If is colliding with the start platform                
-            {
-                
-            }
-            else if (tag == "FinalPlatform") // If is colliding with the final platform
-            {
-                if (!IsMoving)
-                {
-                    if (Checkpoints.Count == 2)
-                    {
-
-                        GSReference.SwitchState(GSReference.getWinName());   
-                    }
-                }
-            }
-
-        }
-        else // If is colliding with forbidden object
-        {
-            GSReference.SwitchState(GSReference.getLostName());
-        }
-    }
-
     public void setMassValue(float value){
         PlayerRigidbody.mass = value;
     }

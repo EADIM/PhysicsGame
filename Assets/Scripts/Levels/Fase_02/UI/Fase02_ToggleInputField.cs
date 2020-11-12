@@ -27,7 +27,8 @@ public class Fase02_ToggleInputField : MonoBehaviour
     }
 
     void Update() 
-    {    
+    {   
+        shouldActivateInputContainer = gameState.GetComponent<Fase02_GameState>().States["Exploration"];
         if (Input.GetKey(KeyCode.Escape) && UIElement.isVisible)
         {
             Debug.LogFormat("Escape key pressed.");
@@ -65,7 +66,7 @@ public class Fase02_ToggleInputField : MonoBehaviour
 
             //Debug.LogFormat("Hit.name: {0} Hit.tag: {1}", name, tag);
             
-            if ((tag == "Player" && !UIElement.isVisible && canShow && !Fase02_CameraController.isLMoving && !Fase02_CameraController.isRMoving))
+            if ((tag == "Player" && !UIElement.isVisible && shouldActivateInputContainer && !Fase02_CameraController.isLMoving && !Fase02_CameraController.isRMoving))
             {
                 toggleInputContainer();
             }
