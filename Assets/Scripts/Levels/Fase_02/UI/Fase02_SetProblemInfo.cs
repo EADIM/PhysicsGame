@@ -20,10 +20,6 @@ public class Fase02_SetProblemInfo : MonoBehaviour
     private string format = "#.##";
 
     [SerializeField]
-    private Vector3 DimensaoPlataformaInicial = Vector3.zero;
-    [SerializeField]
-    private Vector3 DimensaoPlataformaFinal = Vector3.zero;
-    [SerializeField]
     
     private string info;
     private Dictionary<string, string> Imagens = new Dictionary<string, string>();
@@ -31,7 +27,7 @@ public class Fase02_SetProblemInfo : MonoBehaviour
     private float UnitScale = 0.0f;
 
     private void Awake() {
-        InitializeImagens();
+    
     }
 
     private void Start() {
@@ -54,34 +50,23 @@ public class Fase02_SetProblemInfo : MonoBehaviour
     }
 
     private void SetText(){
-        string[] sprites = {"<sprite=0>","<sprite=1>","<sprite=2>"};
+        string[] sprites = {"<sprite=0>","<sprite=1>"};
         
         info = "" +
-            "O robô deve chegar na plataforma final passando pela plataforma do meio." +
-            "\nEle inicia seu movimento na plataforma inicial e deve percorrer uma distância de D = " + " metros até pular." +
-            "\n" + sprites[2] + "\n\n\n\n\n\n\n\n\n" +
-            "\nA plataforma do meio está a uma distância W = " + " metros do ponto do pulo e possui " + " metros de largura e " + " metros de comprimento." +
-            "\n" + sprites[0] + "\n\n\n\n\n\n\n\n\n" +
-            "\nA plataforma final está a uma distância K = " + " metros da plataforma do meio." +
-            "\n" + sprites[1] + "\n\n\n\n\n\n\n\n\n" +
-            "\nVocê pode controlar as variáveis de aceleração e de ângulo do pulo." +
-            "\nQuando o robô estiver na plataforma inicial, a aceleração é constante até o momento do pulo." +
-            "";
+           "O objetivo desta fase é chegar do outro lado. Para que isso seja possível, é necessário apertar o botão que só pode ser pressionado por uma bola, que é lançada por uma alavanca.\n" +
+           "Sua função é definir a massa da caixa para que ela aplique uma força na alavanca e arremesse a bola no botão. Esta caixa está a 51m de altura em relação a alavanca.\n" + "\n\n\n\n" +
+           sprites[0] + "\n\n\n" +
+           "Considere que o botão está a uma distância horizontal de A =  219m em relação a bola e a 15.25m de altura em relação ao solo.\n" + "\n\n\n" +
+           sprites[1] + "\n\n\n\n\n" +
+           "Momentâneamente, a bola que será lançada possui uma massa de 5kg, a mesma sempre percorre a distância horizontal máxima condizente com a sua velocidade inicial.\n";
 
         textUI.text = info;
     }
 
     private void SetText(string info){
         
-        string[] sprites = {Imagens["InitialAndMidPlatform"], Imagens["MidAndFinalPlatform"], Imagens["InitialPlatform01"]};
+        string[] sprites = {"<sprite=0>","<sprite=1>"};
         
         textUI.text = info;
-    }
-
-    private void InitializeImagens(){
-        Imagens.Add("InitialAndMidPlatform", "<sprite=0>");
-        Imagens.Add("MidAndFinalPlatform", "<sprite=1>");
-        Imagens.Add("InitialPlatform01", "<sprite=2>");
-        Imagens.Add("InitialPlatform02", "<sprite=3>");
     }
 }

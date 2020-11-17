@@ -24,11 +24,11 @@ public class Fase02_CameraController : MonoBehaviour
     public static bool isLMoving = false;
     public static bool isRMoving = false;
 
-    private ToggleCamera toggle;
+    private ToggleCamera_fase02 toggle;
 
 
     private void Start() {
-        toggle = references.GameState.GetComponent<ToggleCamera>();
+        toggle = references.GameState.GetComponent<ToggleCamera_fase02>();
         ExplorerCamera = references.ExplorerCamera;
         GameObject JoystickContainer = Utils.GetChildWithName(references.Canvas.gameObject, "Joysticks Container");
         leftJoystick = Utils.GetChildWithName(JoystickContainer, "Left Joystick").GetComponent<FixedJoystick>();

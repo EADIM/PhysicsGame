@@ -7,7 +7,6 @@ public class Fase01_GameState : MonoBehaviour
 {
 
     public Fase01_References references;
-
     private GameObject Player;
     private Canvas Canvas;
     private ToggleCamera ToggleCamera;

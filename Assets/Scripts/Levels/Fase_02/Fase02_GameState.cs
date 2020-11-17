@@ -10,8 +10,8 @@ public class Fase02_GameState : MonoBehaviour
 
     private GameObject Player;
     private Canvas Canvas;
-    private ToggleCamera ToggleCamera;
-    private Fase01_GetProblemInfo getProblemInfo;
+    private ToggleCamera_fase02 ToggleCamera;
+    private Fase02_GetProblemInfo getProblemInfo;
     public Dictionary<string, bool> States = new Dictionary<string, bool>();
 
     public string currentState = "Start";
@@ -41,6 +41,7 @@ public class Fase02_GameState : MonoBehaviour
     {
         UnitScale = 0.54f;
         Canvas = references.Canvas.GetComponent<Canvas>();
+        getProblemInfo = transform.GetComponent<Fase02_GetProblemInfo>();
         SwitchState(getStartName());
     }
 
@@ -180,6 +181,10 @@ public class Fase02_GameState : MonoBehaviour
         buttons_helpButton.GetComponent<ToggleUIElement>().Hide();
         GameObject explanationContainer = Utils.GetChildWithName(Canvas.gameObject, "Explanation Container");
         explanationContainer.GetComponent<ToggleUIElement>().Show();
+
+        getProblemInfo.OnVariablesChange();
+        references.QuestionInfo.GetComponent<Fase02_SetProblemInfo>().OnInfoChanged(getProblemInfo);
+        references.ExplanationInfo.GetComponent<Fase02_SetProblemInfo>().OnInfoChanged(getProblemInfo);
     }
 
     private void PauseUIElements()

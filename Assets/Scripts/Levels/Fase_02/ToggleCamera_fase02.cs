@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleCamera : MonoBehaviour
+public class ToggleCamera_fase02 : MonoBehaviour
 {
     private int camera_index = 1;
-    public Camera[] cameras = new Camera[3];
+    public Camera[] cameras = new Camera[2];
     [HideInInspector] public Camera SideCamera;
     [HideInInspector] public Camera ExplorerCamera;
     [HideInInspector] public Camera BackCamera;
@@ -19,7 +19,6 @@ public class ToggleCamera : MonoBehaviour
         //Debug.Log("Length of Cameras: " + cameras.Length);
         SideCamera = cameras[0];
         ExplorerCamera = cameras[1];
-        BackCamera = cameras[2];
 
         currentCamera = ExplorerCamera;
     }
@@ -27,7 +26,6 @@ public class ToggleCamera : MonoBehaviour
     private void Start() {
         SideCamera.enabled = false;
         ExplorerCamera.enabled = true;
-        BackCamera.enabled = false;
     }
     
     public void switchCameras(){
