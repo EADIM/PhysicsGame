@@ -185,6 +185,9 @@ public class Fase02_GameState : MonoBehaviour
         getProblemInfo.OnVariablesChange();
         references.QuestionInfo.GetComponent<Fase02_SetProblemInfo>().OnInfoChanged(getProblemInfo);
         references.ExplanationInfo.GetComponent<Fase02_SetProblemInfo>().OnInfoChanged(getProblemInfo);
+        GameObject ball = references.Ball.gameObject;
+        Fase02_PlayerController ballCont = ball.GetComponent<Fase02_PlayerController>();
+        ballCont.setBallMass();
     }
 
     private void PauseUIElements()

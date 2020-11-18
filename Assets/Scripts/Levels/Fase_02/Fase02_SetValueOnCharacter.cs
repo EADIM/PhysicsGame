@@ -13,6 +13,9 @@ public class Fase02_SetValueOnCharacter : MonoBehaviour
 
         GameObject box = references.Box.gameObject;
         Fase02_PlayerController boxCont = box.GetComponent<Fase02_PlayerController>();
+
+        GameObject ball = references.Ball.gameObject;
+        Fase02_PlayerController ballCont = ball.GetComponent<Fase02_PlayerController>();
         
         if (attribute == 0)
             pcont.setAcceleration(inputField.text);
@@ -21,7 +24,7 @@ public class Fase02_SetValueOnCharacter : MonoBehaviour
         else if(attribute == 2)
             pcont.setGravity(inputField.text);
         else if(attribute == 3)
-            pcont.setBallMass(inputField.text);
+            ballCont.setBallMass();
     }
 
 }

@@ -27529,7 +27529,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1489474118}
   m_HandleRect: {fileID: 1489474117}
   m_Direction: 2
-  m_Value: 0.99999976
+  m_Value: 0.9999999
   m_Size: 0.5417762
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -32347,7 +32347,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 458833465}
   m_HandleRect: {fileID: 458833464}
   m_Direction: 2
-  m_Value: 0.99999964
+  m_Value: 0.9999998
   m_Size: 0.6792313
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -34622,7 +34622,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848108015162390}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -40168,6 +40168,7 @@ GameObject:
   - component: {fileID: 1543065505}
   - component: {fileID: 1543065510}
   - component: {fileID: 1543065509}
+  - component: {fileID: 1543065511}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -40290,6 +40291,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   references: {fileID: 2011454022}
+--- !u!114 &1543065511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543065503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde2801e0d830bd4c9e533a8745cf417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  references: {fileID: 2011454022}
+  StartPlatformPosition: 0
+  TimeSpanned: 0
+  IsMoving: 0
+  JumpedMid: 0
+  jumpstates: 0
+  RunAnimationName: is_running
+  JumpAnimationName: is_going_upwards
+  WinAnimationName: did_win
+  IsPlayerOnInitialPlatform: 1
 --- !u!1 &1546411053
 GameObject:
   m_ObjectHideFlags: 0
@@ -44427,6 +44450,7 @@ GameObject:
   - component: {fileID: 1668992669}
   - component: {fileID: 1668992672}
   - component: {fileID: 1668992671}
+  - component: {fileID: 1668992670}
   m_Layer: 5
   m_Name: Value
   m_TagString: Untagged
@@ -44453,6 +44477,20 @@ RectTransform:
   m_AnchoredPosition: {x: -65.6592, y: 0}
   m_SizeDelta: {x: 131.3184, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1668992670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668992668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49212f234f0bf334abdde1ba9f998826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  references: {fileID: 2011454022}
+  attribute: 3
 --- !u!114 &1668992671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52420,6 +52458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Box: {fileID: 1848108015162390}
+  Ball: {fileID: 1543065503}
   Player: {fileID: 1334847925}
   PlataformaInicial: {fileID: 1462935235}
   PlataformaFinal: {fileID: 167655953}
@@ -57215,6 +57254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f357d1555bc496745bbfdeee61d8c471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  references: {fileID: 2011454022}
+  gms: {fileID: 2011454023}
 --- !u!33 &1051017830023088761
 MeshFilter:
   m_ObjectHideFlags: 0

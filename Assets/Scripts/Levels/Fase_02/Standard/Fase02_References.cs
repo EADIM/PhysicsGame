@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fase02_References : MonoBehaviour
 {
     public GameObject Box;
+    public GameObject Ball;
     public GameObject Player;
     public GameObject PlataformaInicial;
     public GameObject PlataformaFinal;

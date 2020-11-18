@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Random=UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -248,9 +249,11 @@ public class Fase02_PlayerController : PlayerBase_fase02
     public void setAcceleration(float value){
         _acceleration = value;
     }
-    public void setBallMass(float value){
+    public void setBallMass(){
+        Debug.Log("Cheguei");
+        int value = Random.Range(3,10);
         _ball_mass = value;
-        setMassValue(value);
+        setMassValue(_ball_mass);
     }
     public void setBoxMass(float value){
         _box_mass = value;
@@ -264,11 +267,7 @@ public class Fase02_PlayerController : PlayerBase_fase02
     {
         _acceleration = ParseValue(value);
     }
-    public void setBallMass(string value){
-        _ball_mass = ParseValue(value);
-        setMassValue(_ball_mass);
-    }
-
+    
     public void setGravity(string value){
         _gravity = ParseValue(value);
     }
