@@ -9,8 +9,11 @@ public class Fase02_GetValueFromPlayer : MonoBehaviour
     private Fase02_PlayerController sim;
     public int attribute = 0;
 
+    private Fase02_PlayerController Ball;
+
     private void Start() {
         sim = references.Player.GetComponent<Fase02_PlayerController>();
+        Ball = references.Ball.GetComponent<Fase02_PlayerController>();
     }
 
     private void Update() {
@@ -26,7 +29,7 @@ public class Fase02_GetValueFromPlayer : MonoBehaviour
         else if (attribute == 2)
             value = Mathf.Abs(sim.Gravity);
         else if (attribute == 3)
-            value = sim.Ball_mass;
+            value = Ball.Ball_mass;
 
         return value;
     }
