@@ -29,6 +29,7 @@ public class Fase02_GameState : MonoBehaviour
     public bool pausedFromUI = false;
 
     public bool FirstExplanationWindow = false;
+    public Transform[] listPosition = new Transform[3];
 
 
     private void Awake()
@@ -39,6 +40,9 @@ public class Fase02_GameState : MonoBehaviour
     
     private void Start() 
     {
+        listPosition[0] = copyTransform(references.Ball.transform);
+        listPosition[1] = copyTransform(references.Box.transform);
+        listPosition[2] = copyTransform(references.Seesaw.transform);
         UnitScale = 0.54f;
         Canvas = references.Canvas.GetComponent<Canvas>();
         getProblemInfo = transform.GetComponent<Fase02_GetProblemInfo>();
@@ -95,8 +99,33 @@ public class Fase02_GameState : MonoBehaviour
         }
     }
 
+    public void resetTransform(GameObject src, Transform target, Rigidbody rb)
+    {
+        if(rb){
+            //Debug.Log("Bisha");
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        
+        src.transform.localPosition = target.localPosition;
+        src.transform.localRotation = target.localRotation;
+
+    }
+
+    public Transform copyTransform(Transform src){
+        GameObject empty = new GameObject();
+        Transform target = empty.transform;
+        target.localPosition = src.localPosition;
+        target.localRotation = src.localRotation;
+        return target;
+    }
+
     public void ResetValues()
     {
+        Debug.Log("Inicial: " + listPosition[0].localPosition);
+        resetTransform(references.Ball, listPosition[0], references.Ball.GetComponent<Rigidbody>());
+        resetTransform(references.Box, listPosition[1], references.Box.GetComponent<Rigidbody>());
+        resetTransform(references.Seesaw, listPosition[2], references.Seesaw.GetComponent<Rigidbody>());
         currentState = getStartName();
         previousState = getExplorationName();
         SwitchState(getStartName());
@@ -107,6 +136,8 @@ public class Fase02_GameState : MonoBehaviour
     private void changeExploration()
     {
         ResumeUIElements();
+        GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
+        levelStats.GetComponent<ToggleUIElement>().Show();
         GameObject explanationContainer = Utils.GetChildWithName(Canvas.gameObject, "Explanation Container");
         explanationContainer.GetComponent<ToggleUIElement>().Hide();
         GameObject buttons = Utils.GetChildWithName(Canvas.gameObject, "Buttons");
@@ -154,7 +185,7 @@ public class Fase02_GameState : MonoBehaviour
     {
         GameObject buttons = Utils.GetChildWithName(Canvas.gameObject, "Buttons");
         buttons.GetComponent<ToggleUIElement>().Hide();
-        inputfieldUI.Hide();
+        //inputfieldUI.Hide();
         GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
         levelStats.GetComponent<ToggleUIElement>().Hide();
         GameObject joysticks_container = Utils.GetChildWithName(Canvas.gameObject, "Joysticks Container");
@@ -181,7 +212,6 @@ public class Fase02_GameState : MonoBehaviour
         buttons_helpButton.GetComponent<ToggleUIElement>().Hide();
         GameObject explanationContainer = Utils.GetChildWithName(Canvas.gameObject, "Explanation Container");
         explanationContainer.GetComponent<ToggleUIElement>().Show();
-
         getProblemInfo.OnVariablesChange();
         references.QuestionInfo.GetComponent<Fase02_SetProblemInfo>().OnInfoChanged(getProblemInfo);
         references.ExplanationInfo.GetComponent<Fase02_SetProblemInfo>().OnInfoChanged(getProblemInfo);

@@ -17,7 +17,7 @@ public class Fase02_ButtonPressed : MonoBehaviour
             * Código para quando colidir
             */
             Debug.Log("Colidiu com " + other.gameObject.name);
-            //gms.SwitchState(gms.getWinName());
+            gms.SwitchState(gms.getWinName());
         }
     }
 }
