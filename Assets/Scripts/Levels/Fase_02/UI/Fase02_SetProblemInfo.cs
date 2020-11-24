@@ -53,12 +53,12 @@ public class Fase02_SetProblemInfo : MonoBehaviour
         string[] sprites = {"<sprite=0>","<sprite=1>"};
         
         info = "" +
-           "O objetivo desta fase é chegar do outro lado. Para que isso seja possível, é necessário apertar o botão que só pode ser pressionado por uma bola, que é lançada por uma alavanca.\n" +
-           "Sua função é definir a massa da caixa para que ela aplique uma força na alavanca e arremesse a bola no botão. Esta caixa está a 51m de altura em relação a alavanca.\n" + "\n\n\n\n" +
+           "O objetivo desta fase é apertar o botão do outro lado da plataforma. Mas, devido a altura da plataforma, o robô teve a brilhante ideia de ajustar o seu corpo ao formato de uma bola e se arremessar por uma alavanca\n" +
+           "Sua função é definir a massa da caixa para que ela aplique uma força na alavanca e arremesse o robô no botão. Esta caixa está a 51m de altura em relação a alavanca.\n" + "\n\n\n\n" +
            sprites[0] + "\n\n\n" +
-           "Considere que o botão está a uma distância horizontal de A =  219m em relação a bola e a 15.25m de altura em relação ao solo.\n" + "\n\n\n" +
+           "Considere que o botão está a uma distância horizontal de A =  219m em relação ao robô e a 15.25m de altura em relação ao solo.\n" + "\n\n\n" +
            sprites[1] + "\n\n\n\n\n" +
-           "Momentâneamente, a bola que será lançada possui uma massa de 5kg, a mesma sempre percorre a distância horizontal máxima condizente com a sua velocidade inicial.\n";
+           "O robô possui uma massa aleatória (apresentada no canto superior esquerdo), considere que o mesmo sempre percorre a distância horizontal máxima condizente com a sua velocidade inicial.\n";
 
         textUI.text = info;
     }
