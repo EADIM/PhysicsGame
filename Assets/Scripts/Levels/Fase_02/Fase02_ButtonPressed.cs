@@ -12,7 +12,7 @@ public class Fase02_ButtonPressed : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.name == "Ball"){
+        if(other.gameObject.name == "Player"){
             /*
             * Código para quando colidir
             */
