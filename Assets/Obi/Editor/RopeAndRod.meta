@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: cb50006efd89f07409910063a5cf28aa
+guid: 00c9b99ffa90a4646b360dcad1ea0b84
+labels:
+- ObiRope
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
