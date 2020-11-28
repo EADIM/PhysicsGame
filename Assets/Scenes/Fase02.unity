@@ -242,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8869627}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 306.01114, y: 107.17483, z: 415.54333}
+  m_LocalPosition: {x: 306.01114, y: 89.6, z: 470.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2011454025}
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 33623635}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (37)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2324,7 +2324,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2011454023}
-        m_MethodName: ResetValues
+        m_MethodName: tryAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4756,7 +4756,7 @@ GameObject:
   - component: {fileID: 163143351}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (35)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -6024,7 +6024,7 @@ GameObject:
   - component: {fileID: 221207804}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (36)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -11138,10 +11138,10 @@ RectTransform:
   m_Father: {fileID: 1604537494}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 407.72772, y: -36.645}
-  m_SizeDelta: {x: 815.45264, y: 73.29}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 815.45264, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429953064
 MonoBehaviour:
@@ -13499,8 +13499,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 930313144}
   m_HandleRect: {fileID: 930313143}
   m_Direction: 2
-  m_Value: 0.99999964
-  m_Size: 0.72026956
+  m_Value: 1
+  m_Size: 0.7202696
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21227,7 +21227,7 @@ GameObject:
   - component: {fileID: 806438183}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (34)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -24259,7 +24259,7 @@ GameObject:
   - component: {fileID: 918740346}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (40)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -27529,7 +27529,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1489474118}
   m_HandleRect: {fileID: 1489474117}
   m_Direction: 2
-  m_Value: 0.99999946
+  m_Value: 0.99999976
   m_Size: 0.5417761
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -28842,10 +28842,10 @@ RectTransform:
   m_Father: {fileID: 1604537494}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 407.72772, y: -538.295}
-  m_SizeDelta: {x: 815.4554, y: 930.01}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 815.4554, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1076338076
 GameObject:
@@ -29190,7 +29190,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1563107959}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.6178694
+  m_Size: 0.61786944
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -29894,7 +29894,7 @@ GameObject:
   - component: {fileID: 1108878346}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (38)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -32347,8 +32347,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 458833465}
   m_HandleRect: {fileID: 458833464}
   m_Direction: 2
-  m_Value: 0.9999992
-  m_Size: 0.67923117
+  m_Value: 0.99999964
+  m_Size: 0.6792313
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -33295,7 +33295,7 @@ GameObject:
   - component: {fileID: 1234637186}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (39)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -33990,7 +33990,7 @@ GameObject:
   - component: {fileID: 1273852087}
   m_Layer: 0
   m_Name: Deck_Floor_01_snaps002 (33)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -35966,6 +35966,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   references: {fileID: 2011454022}
+--- !u!114 &1334847934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334847925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1681cce0f40763f46b9c264c96763ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  References: {fileID: 2011454022}
 --- !u!1001 &1344493990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37564,10 +37577,10 @@ RectTransform:
   m_Father: {fileID: 1461145996}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 406.0044, y: -36.645}
-  m_SizeDelta: {x: 815.45264, y: 73.29}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 815.45264, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391757563
 MonoBehaviour:
@@ -38770,10 +38783,10 @@ RectTransform:
   m_Father: {fileID: 1461145996}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 406.0044, y: -538.295}
-  m_SizeDelta: {x: 815.4554, y: 930.01}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 815.4554, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1429570392
 GameObject:
@@ -41166,6 +41179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1681cce0f40763f46b9c264c96763ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  References: {fileID: 0}
 --- !u!114 &1543065510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43730,9 +43744,9 @@ RectTransform:
   m_Father: {fileID: 394347020}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 407.72772, y: -73.29}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 815.4554, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1607641306
@@ -56700,10 +56714,10 @@ RectTransform:
   m_Father: {fileID: 394347020}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 407.72772, y: -36.645}
-  m_SizeDelta: {x: 815.45264, y: 73.29}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 815.45264, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123205239
 MonoBehaviour:
@@ -57721,6 +57735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballObject: {fileID: 1334847925}
+  colidiu: 0
 --- !u!114 &1848108015162393
 MonoBehaviour:
   m_ObjectHideFlags: 0

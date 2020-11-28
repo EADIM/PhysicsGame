@@ -7,7 +7,7 @@ public class Fase02_BoxCollider : MonoBehaviour
 
     public GameObject ballObject;
     private Rigidbody ballProperties;
-    private bool colidiu = false;
+    public bool colidiu = false;
 
     private void OnCollisionEnter(Collision other) {
 

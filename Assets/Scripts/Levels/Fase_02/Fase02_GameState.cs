@@ -122,16 +122,13 @@ public class Fase02_GameState : MonoBehaviour
 
     public void ResetValues()
     {
+        references.Box.GetComponent<Fase02_BoxCollider>().colidiu = false;
+        references.Player.GetComponent<Fase02_PlayerController>().setBallMass();
         Debug.Log("Inicial: " + listPosition[0].localPosition);
         resetTransform(references.Ball, listPosition[0], references.Ball.GetComponent<Rigidbody>());
         resetTransform(references.Box, listPosition[1], references.Box.GetComponent<Rigidbody>());
         resetTransform(references.Seesaw, listPosition[2], references.Seesaw.GetComponent<Rigidbody>());
-        currentState = getStartName();
-        previousState = getExplorationName();
-        SwitchState(getStartName());
     }
-
-
 
     private void changeExploration()
     {
@@ -178,6 +175,7 @@ public class Fase02_GameState : MonoBehaviour
 
     private void changeLost()
     {
+        ResetValues();
         SwitchState(getExplorationName());
     }
 
@@ -198,6 +196,13 @@ public class Fase02_GameState : MonoBehaviour
         text = text + Fase02_Timer.GetComponent<TMPro.TMP_Text>().text;
         TimeText.GetComponent<TMPro.TMP_Text>().text = text;
         GamePause.PauseGame();
+    }
+
+    public void tryAgain(){
+        ResetValues();
+        currentState = getStartName();
+        previousState = getExplorationName();
+        SwitchState(getStartName());
     }
 
     private void changeStart()
