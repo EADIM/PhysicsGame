@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class Fase02_GameState : MonoBehaviour
 {
-
     public Fase02_References references;
-
     private GameObject Player;
     private Canvas Canvas;
     private ToggleCamera_fase02 ToggleCamera;
@@ -102,6 +100,7 @@ public class Fase02_GameState : MonoBehaviour
     public void resetTransform(GameObject src, Transform target, Rigidbody rb)
     {
         if(rb){
+            rb.isKinematic = true;
             //Debug.Log("Bisha");
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
@@ -109,7 +108,7 @@ public class Fase02_GameState : MonoBehaviour
         
         src.transform.localPosition = target.localPosition;
         src.transform.localRotation = target.localRotation;
-
+        if (rb) rb.isKinematic=false;
     }
 
     public Transform copyTransform(Transform src){
@@ -125,9 +124,12 @@ public class Fase02_GameState : MonoBehaviour
         references.Box.GetComponent<Fase02_BoxCollider>().colidiu = false;
         references.Player.GetComponent<Fase02_PlayerController>().setBallMass();
         Debug.Log("Inicial: " + listPosition[0].localPosition);
+        resetTransform(references.Seesaw, listPosition[2], references.Seesaw.GetComponent<Rigidbody>());
         resetTransform(references.Ball, listPosition[0], references.Ball.GetComponent<Rigidbody>());
         resetTransform(references.Box, listPosition[1], references.Box.GetComponent<Rigidbody>());
-        resetTransform(references.Seesaw, listPosition[2], references.Seesaw.GetComponent<Rigidbody>());
+        Transform obj = references.ExplorerCamera.GetComponent<Fase02_BackupTransform>().obj;
+        Debug.Log("OI " + obj.localPosition.x + " " + obj.localPosition.y + " " + obj.localPosition.z);
+        resetTransform(references.ExplorerCamera, references.ExplorerCamera.GetComponent<Fase02_BackupTransform>().obj, null);
     }
 
     private void changeExploration()

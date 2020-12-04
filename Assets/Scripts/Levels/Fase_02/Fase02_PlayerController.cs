@@ -201,30 +201,12 @@ public class Fase02_PlayerController : PlayerBase_fase02
 
     private void Update()
     {
-        if(GSReference.States[GSReference.getSimulationName()])
-        {
-            TimeSpanned += Time.deltaTime;
-        }
+        
     }
 
     private void FixedUpdate()
     {
-        CheckIfObjectIsMoving();
-        if (Checkpoints.Count > 1) 
-        {
-            Fase02_ChangePlayerPosition.canChangePosition = false;
-        }
-
-        PreviousPosition = CurrentPosition;
-        CurrentPosition = transform.position;
-
-        /*if ( GSReference.States[GSReference.getSimulationName()] )
-        {
-            if (IsPlayerOnInitialPlatform)
-            {
-                Run();
-            }
-        }*/
+        
     }
 
     private void OnTriggerEnter(Collider other) {

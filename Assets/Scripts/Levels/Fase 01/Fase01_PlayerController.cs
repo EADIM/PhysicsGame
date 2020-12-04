@@ -77,7 +77,7 @@ public class Fase01_PlayerController : PlayerBase
                         * _acceleration
                         * GSReference.UnitScale
                         ;
-        PlayerRigidbody.AddForce(force, ForceMode.Force);
+        PlayerRigidbody.AddForce(force, ForceMode.Acceleration);
     }
 
     public override void Jump(Vector3 jump, ForceMode mode)
@@ -152,8 +152,8 @@ public class Fase01_PlayerController : PlayerBase
 
         Debug.LogFormat("V: {0:F2} V²: {1:F2}", V, V_2);
 
-        float reach = (V_2 * angle2Sin) / (2 * _gravity);
-        reach /= GSReference.UnitScale;
+        float reach = (V_2 * angle2Sin) / (_gravity);
+        //reach /= GSReference.UnitScale;
 
         Vx = Mathf.Abs(Vx);
         Vy = Mathf.Abs(Vy);
@@ -161,7 +161,7 @@ public class Fase01_PlayerController : PlayerBase
         V = Mathf.Abs(V);
 
         Debug.LogFormat("Vx = {0:F2} m/s,  Vy = {1:F2} m/s,  Vz = {2:F2} m/s,  V = {3:F2} m/s", Vx, Vy, Vz, V);
-        Debug.LogFormat("Alcance = {0:F2} m", reach);
+        Debug.LogFormat("Alcance = {0:F2} m sen(20)= {1:F2}", reach, angle2Sin);
 
         Vector3 JumpVector = new Vector3(Vx, Vy, -Vz);
 
@@ -348,6 +348,8 @@ public class Fase01_PlayerController : PlayerBase
                 jumpstates = 2;
             }
         }
+        Vector3 forca = transform.localScale.x * Physics.gravity;
+        PlayerRigidbody.AddForce(forca, ForceMode.Acceleration);
     }
 
     private void OnTriggerEnter(Collider other) {

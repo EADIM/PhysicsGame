@@ -70,12 +70,12 @@ public class Fase01_SetProblemInfo : MonoBehaviour
     private void SetText(){
 
         Debug.Log(UnitScale);
-        string dIP = Mathf.Abs(DistanciaEntreInicialEPulo.z * UnitScale).ToString(format);
-        string dPM = Mathf.Abs(DistanciaEntrePuloEMeio.z * UnitScale).ToString(format);
-        string dMF = Mathf.Abs(DistanciaEntreMeioEFinal.z * UnitScale).ToString(format);
+        string dIP = Mathf.Abs(DistanciaEntreInicialEPulo.z ).ToString(format);
+        string dPM = Mathf.Abs(DistanciaEntrePuloEMeio.z ).ToString(format);
+        string dMF = Mathf.Abs(DistanciaEntreMeioEFinal.z).ToString(format);
         string[] dimM = {
-            Mathf.Abs(DimensaoPlataformaDoMeio.x * UnitScale).ToString(format),
-            Mathf.Abs(DimensaoPlataformaDoMeio.z * UnitScale).ToString(format)
+            Mathf.Abs(DimensaoPlataformaDoMeio.x).ToString(format),
+            Mathf.Abs(DimensaoPlataformaDoMeio.z).ToString(format)
         };
         
         string[] sprites = {"<sprite=0>","<sprite=1>","<sprite=2>"};

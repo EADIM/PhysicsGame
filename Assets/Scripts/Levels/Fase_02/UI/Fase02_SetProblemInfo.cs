@@ -54,7 +54,7 @@ public class Fase02_SetProblemInfo : MonoBehaviour
         
         info = "" +
            "O objetivo desta fase é apertar o botão do outro lado da plataforma. Mas, devido a altura da plataforma, o robô teve a brilhante ideia de ajustar o seu corpo ao formato de uma bola e se arremessar por uma alavanca\n" +
-           "Sua função é definir a massa da caixa para que ela aplique uma força na alavanca e arremesse o robô no botão. Esta caixa está a 51m de altura em relação a alavanca.\n" + "\n\n\n\n" +
+           "Sua função é definir a massa da caixa para que ela aplique uma força na alavanca e arremesse o robô no botão. Esta caixa está a 51m de altura em relação a alavanca.\n" + "\n\n\n\n\n" +
            sprites[0] + "\n\n\n" +
            "Considere que o botão está a uma distância horizontal de A =  219m em relação ao robô e a 15.25m de altura em relação ao solo.\n" + "\n\n\n" +
            sprites[1] + "\n\n\n\n\n" +

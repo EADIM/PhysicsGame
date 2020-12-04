@@ -58,7 +58,7 @@ public class Fase01_ToggleInputField : MonoBehaviour
         shouldActivateInputContainer = gameState.GetComponent<Fase01_GameState>().States["Exploration"];
         RaycastHit hit; 
         Ray ray = explorerCamera.ScreenPointToRay(pos); 
-        if ( Physics.Raycast (ray,out hit,100.0f)) 
+        if ( Physics.Raycast (ray,out hit,500.0f)) 
         {
             string name = hit.transform.name;
             string tag = hit.transform.tag;

@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public static void RandScale(){
-        MapScale = Random.Range(1.0f, 1.5f);
-        //MapScale = 1.0f;
+        //MapScale = Random.Range(1.0f, 1.5f);
+        MapScale = 1.0f;
         PlayerPrefs.SetFloat(MapScalePref, MapScale);
     }
 

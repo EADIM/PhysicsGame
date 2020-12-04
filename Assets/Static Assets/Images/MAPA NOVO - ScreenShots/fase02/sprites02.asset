@@ -33,7 +33,7 @@ MonoBehaviour:
   m_SpriteGlyphTable:
   - m_Index: 1
     m_Metrics:
-      m_Width: 1041
+      m_Width: 1010
       m_Height: 585
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 276
@@ -50,7 +50,7 @@ MonoBehaviour:
   - m_Index: 0
     m_Metrics:
       m_Width: 843
-      m_Height: 441
+      m_Height: 441.9
       m_HorizontalBearingX: -419.5
       m_HorizontalBearingY: 239.5
       m_HorizontalAdvance: 839
