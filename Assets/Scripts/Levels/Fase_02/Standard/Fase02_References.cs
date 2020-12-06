@@ -5,6 +5,8 @@ using UnityEngine;
 public class Fase02_References : MonoBehaviour
 {
     public GameObject Seesaw;
+    public GameObject Seesaw_Base;
+    public GameObject Seesaw_Support;
     public GameObject Box;
     public GameObject Ball;
     public GameObject Player;

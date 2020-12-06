@@ -95,8 +95,9 @@ public class Fase01_SetProblemInfo : MonoBehaviour
             "\n" + sprites[0] + "\n\n\n\n\n\n\n\n\n" +
             "\nA plataforma final está a uma distância K = " + dMF + " metros da plataforma do meio." +
             "\n" + sprites[1] + "\n\n\n\n\n\n\n\n\n" +
-            "\nVocê pode controlar as variáveis de aceleração e de ângulo do pulo." +
+            "\nVocê pode controlar as variáveis de aceleração e de ângulo do pulo. Despreze quaisquer forças de atrito." +
             "\nQuando o robô estiver na plataforma inicial, a aceleração é constante até o momento do pulo." +
+            "\nQuando o robô estiver na plataforma do meio, determine a força necessária para que ele alcance a última plataforma sabendo que o instante em que ela começa o salto e o instante em que suas pernas de metal perdem o contato com o solo leva 0.05(s) segundos" + 
             "";
         textUI.text = info;
     }

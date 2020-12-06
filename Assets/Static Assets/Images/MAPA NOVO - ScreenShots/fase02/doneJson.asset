@@ -69,30 +69,30 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 1366
       m_Height: 691
-      m_HorizontalBearingX: -683
+      m_HorizontalBearingX: 121
       m_HorizontalBearingY: 345.5
       m_HorizontalAdvance: 1366
     m_GlyphRect:
       m_X: 0
-      m_Y: -179
+      m_Y: -5
       m_Width: 1366
       m_Height: 691
-    m_Scale: 10
+    m_Scale: 7
     m_AtlasIndex: 0
     sprite: {fileID: 0}
   - m_Index: 1
     m_Metrics:
       m_Width: 1366
       m_Height: 691
-      m_HorizontalBearingX: -683
+      m_HorizontalBearingX: 121
       m_HorizontalBearingY: 345.5
       m_HorizontalAdvance: 1366
     m_GlyphRect:
       m_X: 1366
-      m_Y: -179
+      m_Y: 0
       m_Width: 1366
       m_Height: 691
-    m_Scale: 10
+    m_Scale: 7
     m_AtlasIndex: 0
     sprite: {fileID: 0}
   spriteInfoList:

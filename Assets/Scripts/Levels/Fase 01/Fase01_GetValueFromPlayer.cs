@@ -34,6 +34,9 @@ public class Fase01_GetValueFromPlayer : MonoBehaviour
         else if (attribute == 4){
             value = sim.JumpForce;
         }
+        else if (attribute == 5){
+            value = 0.05f;
+        }
 
         return value;
     }

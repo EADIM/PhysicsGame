@@ -42,6 +42,13 @@ public class Fase01_PlayerController : PlayerBase
         set => _jumpForce = value;
     }
 
+    [SerializeField]
+    public override float TimeJump
+    {
+        get => _timeJump;
+        set => _timeJump = 0.05f;
+    }
+
     
     [HideInInspector] public List<Checkpoint> Checkpoints = new List<Checkpoint>();
     public int StartPlatformPosition = 0;
@@ -116,17 +123,23 @@ public class Fase01_PlayerController : PlayerBase
         {
             Debug.Log("Not Torricelli");
             V = Mathf.Abs(PlayerRigidbody.velocity.z);
+            Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
         }
         else
         {
             Debug.Log("Torricelli");
-            _acceleration = (_jumpForce * GSReference.UnitScale)/ _mass;
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            _timeJump = 0.05f;
+            //_acceleration = (_jumpForce * GSReference.UnitScale)/ _mass;
             
             Vector3 dist = references.GameState.GetComponentInParent<Fase01_GetProblemInfo>().distanciaEntreMeioEFinal;
             Debug.Log("Dist: {" + dist.x + ", " + dist.y + ", " + dist.z + "}");
 
-            V = Mathf.Sqrt((2*_acceleration*Mathf.Abs(dist.z)));
+            //V = Mathf.Sqrt((2*_acceleration*Mathf.Abs(dist.z)));
+            float unity = GSReference.UnitScale/2.5f;
+            V = (_jumpForce*_timeJump*unity)/_mass;
             Vz = V * angleCos;
+            Debug.Log("Vz: " + Vz);
         }
 
         msg += ", Acceleration: " + _acceleration;
@@ -232,13 +245,15 @@ public class Fase01_PlayerController : PlayerBase
         Debug.Log("Resetting from scratch");
         _acceleration = 0.0f;
         _jumpAngle = 0.0f;
+        _timeJump = 0.05f;
+        
         Reset(Checkpoints[0]);
         Checkpoints.Clear();
     }
 
     public void Reset(Checkpoint ckp)
     {
-        //Debug.Log("Reset() called.");
+        IsMoving  = false;//Debug.Log("Reset() called.");
         StopMovement();
         ResetAnimation();
         ResetValues(ckp);
@@ -470,6 +485,10 @@ public class Fase01_PlayerController : PlayerBase
 
     public void setJumpAngle(float value){
         _jumpAngle = value;
+    }
+
+    public void setTimeJump(float value){
+        _timeJump = 0.05f;
     }
 
 

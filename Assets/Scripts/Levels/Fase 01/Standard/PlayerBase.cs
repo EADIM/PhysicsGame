@@ -10,6 +10,7 @@ public abstract class PlayerBase : MonoBehaviour
     protected float _jumpAngle = 0.0f;
     protected float _gravity = 9.81f;
     protected float _jumpForce = 0f;
+    protected float _timeJump = 0.05f;
 
     public abstract void Run();
     public abstract void Jump(Vector3 vector, ForceMode mode);
@@ -19,4 +20,5 @@ public abstract class PlayerBase : MonoBehaviour
     public abstract float JumpAngle { get;set; }
     public abstract float Gravity { get;set; }
     public abstract float JumpForce { get;set; }
+    public abstract float TimeJump {get;set;} 
 }

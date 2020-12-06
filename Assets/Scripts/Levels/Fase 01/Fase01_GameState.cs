@@ -23,7 +23,7 @@ public class Fase01_GameState : MonoBehaviour
     private readonly string PauseName = "Pause";
     private readonly string StartName = "Start";
     private ToggleUIElement inputfieldUI;
-    public float UnitScale = 1.2f; //the amount of units to relative to a meter. (prev = 0.5492f, 1.111436f)
+    public float UnitScale = 3.5f; //the amount of units to relative to a meter. (prev = 0.5492f, 1.111436f)
 
     public bool pausedFromUI = false;
 

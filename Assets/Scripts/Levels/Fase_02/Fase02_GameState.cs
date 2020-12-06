@@ -27,7 +27,7 @@ public class Fase02_GameState : MonoBehaviour
     public bool pausedFromUI = false;
 
     public bool FirstExplanationWindow = false;
-    public Transform[] listPosition = new Transform[3];
+    public Transform[] listPosition;
 
 
     private void Awake()
@@ -38,10 +38,13 @@ public class Fase02_GameState : MonoBehaviour
     
     private void Start() 
     {
+        listPosition = new Transform[5];
         listPosition[0] = copyTransform(references.Ball.transform);
         listPosition[1] = copyTransform(references.Box.transform);
         listPosition[2] = copyTransform(references.Seesaw.transform);
-        UnitScale = 0.54f;
+        listPosition[3] = copyTransform(references.Seesaw_Base.transform);
+        listPosition[4] = copyTransform(references.Seesaw_Support.transform);
+        //UnitScale = 0.54f;
         Canvas = references.Canvas.GetComponent<Canvas>();
         getProblemInfo = transform.GetComponent<Fase02_GetProblemInfo>();
         SwitchState(getStartName());
@@ -101,7 +104,6 @@ public class Fase02_GameState : MonoBehaviour
     {
         if(rb){
             rb.isKinematic = true;
-            //Debug.Log("Bisha");
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
@@ -125,6 +127,8 @@ public class Fase02_GameState : MonoBehaviour
         references.Player.GetComponent<Fase02_PlayerController>().setBallMass();
         Debug.Log("Inicial: " + listPosition[0].localPosition);
         resetTransform(references.Seesaw, listPosition[2], references.Seesaw.GetComponent<Rigidbody>());
+        resetTransform(references.Seesaw_Base, listPosition[3], references.Seesaw_Base.GetComponent<Rigidbody>());
+        resetTransform(references.Seesaw_Support, listPosition[4], references.Seesaw_Support.GetComponent<Rigidbody>());
         resetTransform(references.Ball, listPosition[0], references.Ball.GetComponent<Rigidbody>());
         resetTransform(references.Box, listPosition[1], references.Box.GetComponent<Rigidbody>());
         Transform obj = references.ExplorerCamera.GetComponent<Fase02_BackupTransform>().obj;

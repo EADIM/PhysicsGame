@@ -47,7 +47,7 @@ public class Fase02_BoxCollider : MonoBehaviour
             //ouro: 1.7654f
             //semiOuro: 8.827f
             //ouro2.0 = 0.8827f
-            float value = 1.218f * ballMass * transform.localScale.x;
+            float value = 1.29f * ballMass * transform.localScale.x;
 
             Vector3 unidade = value*diagonal;
 
