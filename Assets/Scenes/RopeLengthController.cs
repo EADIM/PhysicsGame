@@ -19,10 +19,10 @@ public class RopeLengthController : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKey(KeyCode.W))
+		if (Input.GetKey(KeyCode.N))
 			cursor.ChangeLength(rope.restLength - speed * Time.deltaTime);
 
-		if (Input.GetKey(KeyCode.S))
+		if (Input.GetKey(KeyCode.M))
 			cursor.ChangeLength(rope.restLength + speed * Time.deltaTime);
 	}
 }
