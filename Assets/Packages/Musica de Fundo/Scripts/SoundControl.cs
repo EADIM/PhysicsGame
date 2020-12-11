@@ -20,8 +20,11 @@ public class SoundControl : MonoBehaviour
 
     public void playButtonSound()
     {
-        AudioManager.ButtonAudio.time = AudioManager.ButtonAudio.clip.length * AudioManager.startButtonClip;
-        AudioManager.ButtonAudio.Play();
+        if(AudioManager != null){
+            AudioManager.ButtonAudio.time = AudioManager.ButtonAudio.clip.length * AudioManager.startButtonClip;
+            AudioManager.ButtonAudio.Play();
+        }
+        
         isButtonMute = false;
     }
 

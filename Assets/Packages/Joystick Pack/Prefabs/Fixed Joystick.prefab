@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 2929252283123773936}
   - component: {fileID: 2929252283123773937}
   - component: {fileID: 2929252283123773951}
-  - component: {fileID: 617107255}
-  - component: {fileID: 617107254}
   m_Layer: 5
   m_Name: Fixed Joystick
   m_TagString: Untagged
@@ -97,32 +95,6 @@ MonoBehaviour:
   snapY: 0
   background: {fileID: 2929252283123773938}
   handle: {fileID: 2929252285020697096}
---- !u!225 &617107255
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929252283123773939}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &617107254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929252283123773939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f491d3097dbac034996435fda05890aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 617107255}
-  isVisible: 1
 --- !u!1 &2929252285020697097
 GameObject:
   m_ObjectHideFlags: 0

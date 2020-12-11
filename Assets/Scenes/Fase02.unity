@@ -11260,6 +11260,7 @@ MonoBehaviour:
   joystick: {fileID: 1691237770}
   colorOnButtonPressed: {r: 0.05490196, g: 0.41568628, b: 0.77254903, a: 1}
   colorOnButtonReleased: {r: 0.9568628, g: 0.9686275, b: 0.9803922, a: 1}
+  corAtual: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &417510106
 Animator:
   serializedVersion: 3
@@ -20002,7 +20003,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1079779712}
   m_HandleRect: {fileID: 1079779711}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -21439,9 +21440,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747605118}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &749236180
 GameObject:
@@ -30045,7 +30046,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1489474118}
   m_HandleRect: {fileID: 1489474117}
   m_Direction: 2
-  m_Value: 0.99999976
+  m_Value: 1
   m_Size: 0.5417761
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -30328,18 +30329,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1043948795}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1043948797 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 617107254, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-    type: 3}
-  m_PrefabInstance: {fileID: 1043948795}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043948796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f491d3097dbac034996435fda05890aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1043948798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -30382,6 +30371,32 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0.068108544, b: 0.2264151, a: 0.2901961}
   m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1043948807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043948796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f491d3097dbac034996435fda05890aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1043948808}
+  isVisible: 1
+--- !u!225 &1043948808
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043948796}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1046421096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32048,8 +32063,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1563107960}
   m_HandleRect: {fileID: 1563107959}
   m_Direction: 2
-  m_Value: 0.9999995
-  m_Size: 0.6178694
+  m_Value: 0.99999976
+  m_Size: 0.61786944
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35438,8 +35453,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 458833465}
   m_HandleRect: {fileID: 458833464}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.6792313
+  m_Value: 1.0000002
+  m_Size: 0.6792312
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -53026,6 +53041,7 @@ MonoBehaviour:
   joystick: {fileID: 1043948796}
   colorOnButtonPressed: {r: 0.054901965, g: 0.4156863, b: 0.7725491, a: 1}
   colorOnButtonReleased: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+  corAtual: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &1803329078
 Animator:
   serializedVersion: 3
@@ -53099,7 +53115,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1043948797}
+      - m_Target: {fileID: 1043948807}
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -58958,6 +58974,7 @@ MonoBehaviour:
   SideCamera: {fileID: 0}
   ExplorerCamera: {fileID: 0}
   BackCamera: {fileID: 0}
+  references: {fileID: 2011454022}
   currentCamera: {fileID: 0}
   previousCamera: {fileID: 0}
 --- !u!114 &2011454028

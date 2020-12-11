@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ToggleCamera_fase02 : MonoBehaviour
 {
-    private int camera_index = 1;
+    private int camera_index = 0;
     public Camera[] cameras = new Camera[2];
     [HideInInspector] public Camera SideCamera;
     [HideInInspector] public Camera ExplorerCamera;
     [HideInInspector] public Camera BackCamera;
-
+    public Fase02_References references;
     public Camera currentCamera;
     public Camera previousCamera;
     private string currentActiveCamera = "Explorer Camera";
@@ -44,6 +44,16 @@ public class ToggleCamera_fase02 : MonoBehaviour
         currentCamera = cameras[camera_index];
         currentActiveCamera = currentCamera.name;
         
+        if(currentActiveCamera != "Explorer Camera"){
+            Debug.Log("OI");
+            GameObject joysticks_container = Utils.GetChildWithName(references.Canvas, "Joysticks Container");
+            joysticks_container.GetComponent<ToggleUIElement>().Hide();
+        }
+        else{
+            GameObject joysticks_container = Utils.GetChildWithName(references.Canvas, "Joysticks Container");
+            joysticks_container.GetComponent<ToggleUIElement>().Show();
+        }
+
         camera_index++;
 
         camera_index = (camera_index >= cameras.Length) ? 0 : camera_index;

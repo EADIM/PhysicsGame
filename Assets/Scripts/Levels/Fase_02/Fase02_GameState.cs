@@ -123,6 +123,8 @@ public class Fase02_GameState : MonoBehaviour
 
     public void ResetValues()
     {
+        GameObject Fase02_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
+        Fase02_Timer.GetComponent<Fase02_Timer>().Reset();
         references.Box.GetComponent<Fase02_BoxCollider>().colidiu = false;
         references.Player.GetComponent<Fase02_PlayerController>().setBallMass();
         Debug.Log("Inicial: " + listPosition[0].localPosition);
@@ -139,6 +141,7 @@ public class Fase02_GameState : MonoBehaviour
     private void changeExploration()
     {
         ResumeUIElements();
+        ResetValues();
         GameObject levelStats = Utils.GetChildWithName(Canvas.gameObject, "Level Stats");
         levelStats.GetComponent<ToggleUIElement>().Show();
         GameObject explanationContainer = Utils.GetChildWithName(Canvas.gameObject, "Explanation Container");
@@ -149,8 +152,13 @@ public class Fase02_GameState : MonoBehaviour
         GameObject buttons_playButton = Utils.GetChildWithName(buttons, "Play Button");
         GameObject buttons_playButton_text = Utils.GetChildWithName(buttons_playButton, "Text");
         buttons_playButton_text.GetComponent<TMPro.TMP_Text>().text = "PLAY";
-        GameObject joysticks_container = Utils.GetChildWithName(Canvas.gameObject, "Joysticks Container");
-        joysticks_container.GetComponent<ToggleUIElement>().Show();
+        /*GameObject joysticks_container = Utils.GetChildWithName(Canvas.gameObject, "Joysticks Container");
+        joysticks_container.GetComponent<ToggleUIElement>().Show();*/
+
+        if(GetComponent<ToggleCamera_fase02>().currentCamera.name == "Explorer Camera"){
+            GameObject joysticks_container = Utils.GetChildWithName(Canvas.gameObject, "Joysticks Container");
+            joysticks_container.GetComponent<ToggleUIElement>().Show();
+        }
         UnfreezeUI();
         pausedFromUI = false;
     }

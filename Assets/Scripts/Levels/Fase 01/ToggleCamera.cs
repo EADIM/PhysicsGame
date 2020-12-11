@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToggleCamera : MonoBehaviour
 {
-    private int camera_index = 1;
+    private int camera_index = 2;
     public Camera[] cameras = new Camera[3];
     [HideInInspector] public Camera SideCamera;
     [HideInInspector] public Camera ExplorerCamera;

@@ -12,7 +12,7 @@ public class KeepButtonColor : MonoBehaviour
     private ToggleUIElement toggleUIElement;
     private Button button = null;
     private ColorBlock colorBlock;
-
+    public Color corAtual;
     void Start(){
         button = gameObjectButton.GetComponent<Button>();
         toggleUIElement = joystick.GetComponent<ToggleUIElement>();
@@ -47,5 +47,6 @@ public class KeepButtonColor : MonoBehaviour
     private void SetColors(Color color){
         colorBlock.normalColor = color;
         button.colors = colorBlock;
+        corAtual = color;
     }
 }
