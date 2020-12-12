@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ToggleCamera_fase03 : MonoBehaviour
 {
-    private int camera_index = 0;
-    public Camera[] cameras = new Camera[2];
+    private int camera_index = 2;
+    public Camera[] cameras = new Camera[4];
     [HideInInspector] public Camera SideCamera;
     [HideInInspector] public Camera ExplorerCamera;
     [HideInInspector] public Camera BackCamera;
+    [HideInInspector] public Camera ProfileCamera;
     public Fase03_References references;
     public Camera currentCamera;
     public Camera previousCamera;
@@ -19,11 +20,15 @@ public class ToggleCamera_fase03 : MonoBehaviour
         //Debug.Log("Length of Cameras: " + cameras.Length);
         SideCamera = cameras[0];
         ExplorerCamera = cameras[1];
+        ProfileCamera = cameras[2];
+        BackCamera = cameras[3];
         currentCamera = ExplorerCamera;
     }
 
     private void Start() {
         SideCamera.enabled = false;
+        BackCamera.enabled = false;
+        ProfileCamera.enabled = false;
         ExplorerCamera.enabled = true;
     }
     
