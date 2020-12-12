@@ -12,8 +12,9 @@ public class Fase03_BoxController : BoxBase_fase03
     public PhysicMaterial Physicsmaterial;
     public float waitTime = 3.0f;
     private string finalPlace;
+    public GameObject ObiSolver;
+    public GameObject ObiRope;
 
-    
     [SerializeField]
     public override float Rounds
     {
@@ -134,12 +135,15 @@ public class Fase03_BoxController : BoxBase_fase03
             yield return new WaitForSeconds(.02f);
         }
         Debug.Log("Altura final: " + transform.localPosition.x + " " + transform.localPosition.y + " " + transform.localPosition.z);
+        //ObiSolver.GetComponentInChildren<ObiParticleAttachment>().enabled = false;
+        //ObiRope.GetComponent<ObiParticleCounter>
+        
         noFriction();
     }
 
     void Up(){
         float horizontalInput = -transform.localScale.x;
-
+        ObiSolver.GetComponent<RopeLengthController>().deleteRope();
         transform.position = transform.position + new Vector3(horizontalInput*movementSpeed*Time.deltaTime, 0, 0);
     }
 

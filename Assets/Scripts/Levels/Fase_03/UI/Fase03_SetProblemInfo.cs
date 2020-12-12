@@ -53,12 +53,16 @@ public class Fase03_SetProblemInfo : MonoBehaviour
         string[] sprites = {"<sprite=0>","<sprite=1>"};
         
         info = "" +
-           "O objetivo desta fase é apertar o botão do outro lado da plataforma. Mas, devido a altura da plataforma, o robô teve a brilhante ideia de ajustar o seu corpo ao formato de uma bola e se arremessar por uma alavanca\n" +
-           "Sua função é definir a massa da caixa para que ela aplique uma força na alavanca e arremesse o robô no botão. Esta caixa está a 51m de altura em relação a alavanca.\n" + "\n\n\n" +
-           sprites[0] + "\n\n\n\n" +
-           "Considere que o botão está a uma distância horizontal de A =  221,5m em relação ao robô e a 17,3m de altura em relação ao solo.\n" + "\n\n\n" +
-           sprites[1] + "\n\n\n\n" +
-           "O robô possui uma massa aleatória (apresentada no canto superior esquerdo), considere que o mesmo sempre percorre a distância horizontal máxima condizente com a sua velocidade inicial.\n";
+           "Se você chegou até aqui assumimos que você completou as outras fases e já está pronto para um desafio um pouco maior.\n" + 
+           "O objetivo desta fase é escolher a quantidade de rotações necessárias para que o motor levante o bloco a uma altura que o faça deslizar até o buraco e caia na posição correta.\n" + 
+           "O bloco será puxado por uma corda inextensível de massa desprezível e que faz parte de um conjunto de polias ideais, conforme a figura.\n" +  "\n\n\n\n" + 
+           sprites[0] + "\n\n\n\n" + 
+           "Há três polias no total, uma fixa, sendo na verdade um motor que irá puxar a corda. Uma polia móvel, para oferecer ganho mecânico, e uma última polia fixa para direcionar a força. Despreze a força de atrito nas polias.\n" + 
+           "Considere que o plano inclinado está a um ângulo de 45° com o piso.\n" + "\n\n\n\n" + 
+           sprites[1] + "\n\n\n\n" + 
+           "Finalizada as rotações do motor, a corda irá se romper fazendo com que bloco deslize pelo plano inclinado e pelo piso. O coeficiente de atrito dinâmico entre o bloco e a plataforma que ele está vale 0,5.\n" + 
+           "Caso o objeto ultrapasse o piso e caia, sua função será acertar o alvo que está a uma distância horizontal de 10m e uma distância vertical de 20m do piso. Despreze a resistência do ar.\n" + "\n\n\n\n" + 
+           sprites[1] + "\n\n\n\n";
 
         textUI.text = info;
     }

@@ -38,7 +38,7 @@ public class Fase03_GameState : MonoBehaviour
     
     private void Start() 
     {
-        listPosition = new Transform[1];
+        listPosition = new Transform[2];
         listPosition[0] = copyTransform(references.Box.transform);
         /*listPosition[1] = copyTransform(references.Box.transform);
         listPosition[2] = copyTransform(references.Seesaw.transform);
@@ -128,7 +128,8 @@ public class Fase03_GameState : MonoBehaviour
         GameObject Fase03_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
         Fase03_Timer.GetComponent<Fase03_Timer>().Reset();
         resetTransform(references.Box, listPosition[0], references.Box.GetComponent<Rigidbody>());
-        
+        references.ObiSolver.GetComponent<RopeLengthController>().restoreRope();
+
         references.Box.GetComponent<Fase03_BoxController>().stopAllCoroutines();
 
         references.Box.GetComponent<Fase03_BoxController>().ResetEverythingFromScratch();

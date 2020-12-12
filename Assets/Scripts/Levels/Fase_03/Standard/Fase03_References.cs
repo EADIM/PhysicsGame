@@ -24,4 +24,6 @@ public class Fase03_References : MonoBehaviour
     public GameObject HelpInfo;
     public GameObject LevelStats;
     public GameObject InputContainer;
+    public GameObject ObiSolver;
+    public GameObject Mapa;
 }
