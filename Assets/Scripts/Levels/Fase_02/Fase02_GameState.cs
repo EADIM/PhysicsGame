@@ -177,6 +177,8 @@ public class Fase02_GameState : MonoBehaviour
         GameObject buttons_playButton_text = Utils.GetChildWithName(buttons_playButton.gameObject, "Text");
         buttons_playButton_text.GetComponent<TMPro.TMP_Text>().text = "STOP";
         GameObject inputField = Utils.GetChildWithName(Canvas.gameObject, "Input Container");
+        TMPro.TMP_InputField textMesh = Utils.GetChildWithName(inputField, "Massa da Caixa").GetComponent<TMPro.TMP_InputField>();
+        textMesh.text = "";
         inputField.GetComponent<ToggleUIElement>().Hide();
     }
 

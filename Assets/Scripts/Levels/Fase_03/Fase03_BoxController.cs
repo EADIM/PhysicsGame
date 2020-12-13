@@ -7,13 +7,15 @@ using Random=UnityEngine.Random;
 public class Fase03_BoxController : BoxBase_fase03
 {
     private float movementSpeed = 1.0f;
-    public Fase03_References references;
-    public float upDuration = 3.0f;
+    public Fase03_References references; 
     public PhysicMaterial Physicsmaterial;
-    public float waitTime = 3.0f;
-    private string finalPlace;
     public GameObject ObiSolver;
     public GameObject ObiRope;
+    public float waitTime = 3.0f;
+    private string finalPlace;
+    private float startPosition;
+    private float finalPosition;
+    public bool shouldGoDown = false;
 
     [SerializeField]
     public override float Rounds
@@ -46,11 +48,14 @@ public class Fase03_BoxController : BoxBase_fase03
         set => _dynamic_Friction = value;
     }
 
+    public Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        startPosition = Mathf.Abs(transform.localPosition.x);
+        Debug.Log("Comeca: " + startPosition);
+        rb = GetComponent<Rigidbody>();   
     }
 
     // Update is called once per frame
@@ -111,34 +116,32 @@ public class Fase03_BoxController : BoxBase_fase03
         else{
             references.GameState.GetComponent<Fase03_GameState>().SwitchState(references.GameState.GetComponent<Fase03_GameState>().getLostName());
         }
-
-        //Debug.Log(name + " Colidi com " + finalPlace);
     }
 
     private void OnCollisionStay(Collision other) {
         finalPlace = other.transform.name;
     }
 
-    public void StartMovement()
+    public void StartMovementUp()
     {
         if(references.GameState.GetComponent<Fase03_GameState>().States[references.GameState.GetComponent<Fase03_GameState>().getSimulationName()]){
-            StartCoroutine("movimento", upDuration);
+            calculateVariables();
+            StartCoroutine("movimento");
         }
-        Debug.Log("UP: " + upDuration);
     }
-    IEnumerator movimento(float waitTime) 
+    /**/IEnumerator movimento() 
     {
+        Debug.Log(Mathf.Abs(transform.localPosition.x) + " @@@ " + finalPosition);
         float time = 0f;
-        for (; time <= waitTime; time+= 0.02f) 
+        for (; /*time <= waitTime*/Mathf.Abs(transform.localPosition.x) < finalPosition; time+= 0.02f) 
         {
             Up();
             yield return new WaitForSeconds(.02f);
         }
+
         Debug.Log("Altura final: " + transform.localPosition.x + " " + transform.localPosition.y + " " + transform.localPosition.z);
-        //ObiSolver.GetComponentInChildren<ObiParticleAttachment>().enabled = false;
-        //ObiRope.GetComponent<ObiParticleCounter>
-        
-        noFriction();
+    
+        StartMovementDown();
     }
 
     void Up(){
@@ -147,10 +150,37 @@ public class Fase03_BoxController : BoxBase_fase03
         transform.position = transform.position + new Vector3(horizontalInput*movementSpeed*Time.deltaTime, 0, 0);
     }
 
-    void noFriction(){
-        references.Player.GetComponent<Fase03_PlayerController>().StopAnimation("isPushing");
-        Physicsmaterial.dynamicFriction = 0.0f;
+    void calculateVariables(){
+        float piEquivalent = 11.0f;//27.01769682f;
+        finalPosition = (2*piEquivalent*_radiusMotor*_rounds)/2;
+        Debug.Log("Final Pos: " + finalPosition);
+        finalPosition += Mathf.Abs(startPosition);
+        Debug.Log("Final Pos: " + finalPosition);
     }
+
+    void StartMovementDown(){
+        references.Player.GetComponent<Fase03_PlayerController>().StopAnimation("isPushing");
+        Physicsmaterial.dynamicFriction = 0f;
+        shouldGoDown = false;
+        /*StartCoroutine("moveDown");*/
+    }
+
+    void Down(){
+        float horizontalInput = transform.localScale.x*1.8f;
+        transform.position = transform.position + new Vector3(horizontalInput*movementSpeed*Time.deltaTime, 0, 0);
+    }
+
+    /*IEnumerator moveDown() 
+    {
+        float time = 0f;
+        for (; shouldGoDown ; time+= 0.02f) 
+        {
+            Down();
+            yield return new WaitForSeconds(.02f);
+        }
+        startPosition = transform.localPosition.x;
+        rb.velocity = transform.right * 100;
+    }*/
 
     public void withFriction(){
         Physicsmaterial.dynamicFriction = _dynamic_Friction;
@@ -189,13 +219,12 @@ public class Fase03_BoxController : BoxBase_fase03
     //Set values using float
     public void setMotorRounds(float value){
         _rounds = value;
-        upDuration = _rounds;
     }
     public void setBoxMass(float value){
         _box_mass = value;
     }
     public void setRadiusMotor(){
-        int value = Random.Range(1,4);
+        int value = 2;/*Random.Range(1,4)*/;
         _radiusMotor = value;
     }
     public void setDynamicFriction(float value){
@@ -208,7 +237,6 @@ public class Fase03_BoxController : BoxBase_fase03
     //Set values using string
     public void setMotorRounds(string value){
         _rounds = ParseValue(value);
-        upDuration = _rounds;
     }
     public void setBoxMass(string value){
         _box_mass = ParseValue(value);

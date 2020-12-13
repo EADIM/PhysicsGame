@@ -28,7 +28,7 @@ public class RopeLengthController : MonoBehaviour
 
 	void Update()
 	{
-		Debug.Log(rope.restLength);
+		//Debug.Log(rope.restLength);
 	}
 
 	public void deleteRope(){

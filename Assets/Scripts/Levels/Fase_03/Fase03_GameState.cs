@@ -196,9 +196,10 @@ public class Fase03_GameState : MonoBehaviour
         buttons_playButton_text.GetComponent<TMPro.TMP_Text>().text = "STOP";
         GameObject inputField = Utils.GetChildWithName(Canvas.gameObject, "Input Container");
         inputField.GetComponent<ToggleUIElement>().Hide();
-        
+        TMPro.TMP_InputField textMesh = Utils.GetChildWithName(inputField, "Rounds").GetComponent<TMPro.TMP_InputField>();
+        textMesh.text = "";
         references.Player.GetComponent<Fase03_PlayerController>().StartAnimation("isPushing");
-        references.Box.GetComponent<Fase03_BoxController>().StartMovement();
+        references.Box.GetComponent<Fase03_BoxController>().StartMovementUp();
     }
 
     private void changePause()

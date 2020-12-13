@@ -8,7 +8,7 @@ public abstract class BoxBase_fase03 : MonoBehaviour
     protected float _rounds = 0.0f;
     protected float _box_mass = 10.0f;
     protected float _radiusMotor = 0.0f;
-    protected float _dynamic_Friction = 0.5f;
+    protected float _dynamic_Friction = 0.3f;
     protected float _gravity = 9.81f;
     
     public abstract float Rounds {get; set;}

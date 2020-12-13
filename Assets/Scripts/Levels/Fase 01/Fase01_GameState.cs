@@ -170,6 +170,13 @@ public class Fase01_GameState : MonoBehaviour
         GameObject buttons_playButton = Utils.GetChildWithName(buttons, "Play Button");
         GameObject buttons_playButton_text = Utils.GetChildWithName(buttons_playButton.gameObject, "Text");
         buttons_playButton_text.GetComponent<TMPro.TMP_Text>().text = "STOP";
+        GameObject inputField = Utils.GetChildWithName(Canvas.gameObject, "Input Container");
+        TMPro.TMP_InputField textMesh1 = Utils.GetChildWithName(inputField, "Jump Force").GetComponent<TMPro.TMP_InputField>();
+        TMPro.TMP_InputField textMesh2 = Utils.GetChildWithName(inputField, "Acceleration").GetComponent<TMPro.TMP_InputField>();
+        TMPro.TMP_InputField textMesh3 = Utils.GetChildWithName(inputField, "Angle").GetComponent<TMPro.TMP_InputField>();
+        textMesh1.text = "";
+        textMesh2.text = "";
+        textMesh3.text = "";
     }
 
     private void changePause()
