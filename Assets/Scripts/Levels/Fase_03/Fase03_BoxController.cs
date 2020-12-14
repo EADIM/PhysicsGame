@@ -224,7 +224,7 @@ public class Fase03_BoxController : BoxBase_fase03
         _box_mass = value;
     }
     public void setRadiusMotor(){
-        int value = 2;/*Random.Range(1,4)*/;
+        float value = (float)Math.Round((double)Random.Range(1.0f,4.0f),2);
         _radiusMotor = value;
     }
     public void setDynamicFriction(float value){
