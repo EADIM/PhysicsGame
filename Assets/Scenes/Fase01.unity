@@ -23971,7 +23971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9179ed3a5dd084fa1a92fd12d21873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camMovSpeed: 100
+  camMovSpeed: 70
   camRotSpeed: 100
   verticalSpeed: 1
   PositionSensitivity: 0
@@ -42444,8 +42444,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 454579027}
   m_HandleRect: {fileID: 454579026}
   m_Direction: 2
-  m_Value: 0.99999964
-  m_Size: 0.72026956
+  m_Value: 1
+  m_Size: 0.7202696
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

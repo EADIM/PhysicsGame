@@ -131,17 +131,17 @@ PrefabInstance:
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 23
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
@@ -151,12 +151,12 @@ PrefabInstance:
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_text
-      value: "Lan\xE7amento\n Obl\xEDquo II\n"
+      value: II
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: 11
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
@@ -183,7 +183,7 @@ PrefabInstance:
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
@@ -474,7 +474,7 @@ PrefabInstance:
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_text
-      value: Var
+      value: III
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
@@ -682,7 +682,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b1edd163171bef34e9879455198e6edb,
+      objectReference: {fileID: 21300000, guid: 635762571a8d2e44c82250d33c4f7f96,
         type: 3}
     - target: {fileID: 9097326022741686696, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
@@ -1397,7 +1397,7 @@ PrefabInstance:
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 21
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
@@ -1417,7 +1417,7 @@ PrefabInstance:
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
       propertyPath: m_text
-      value: "Lan\xE7amento\n Obl\xEDquo I"
+      value: I
       objectReference: {fileID: 0}
     - target: {fileID: 9097326021299781219, guid: ef93ac4a7ac46754c81f199feb3b9ceb,
         type: 3}
