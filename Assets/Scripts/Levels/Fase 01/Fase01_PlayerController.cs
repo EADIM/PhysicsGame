@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Random=UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -71,6 +72,7 @@ public class Fase01_PlayerController : PlayerBase
     private float MovementRange = 0.0000005f; // gap in which movement is not considered. 
     public bool IsPlayerOnInitialPlatform = true;
     private InputFieldSwitcher InputFieldSwitcher;
+    private string curretnPlataform;
 
     public override void Run()
     {
@@ -97,6 +99,14 @@ public class Fase01_PlayerController : PlayerBase
             StartAnimation(JumpAnimationName);
             PlayerAnimator.Play("Base Layer.Jump", 0, 0.0f);
             PlayerRigidbody.AddForce(jump, mode);
+            StartCoroutine("stillInPlataform");
+        }
+    }
+
+    IEnumerator stillInPlataform(){
+        yield return new WaitForSeconds(4.0f);
+        if(jumpstates == 2 && curretnPlataform=="MidPlatform"){
+            GSReference.SwitchState(GSReference.getLostName());
         }
     }
 
@@ -123,12 +133,10 @@ public class Fase01_PlayerController : PlayerBase
         {
             Debug.Log("Not Torricelli");
             V = Mathf.Abs(PlayerRigidbody.velocity.z);
-            Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
         }
         else
         {
             Debug.Log("Torricelli");
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             _timeJump = 0.05f;
             //_acceleration = (_jumpForce * GSReference.UnitScale)/ _mass;
             
@@ -268,7 +276,7 @@ public class Fase01_PlayerController : PlayerBase
         PlayerRigidbody.isKinematic = true;
         transform.position = ckp.getPosition();
         transform.rotation = ckp.getRotation();
-        PlayerRigidbody.isKinematic = false;
+        //PlayerRigidbody.isKinematic = false;
     }
 
     public void ResetValues(Checkpoint ckp)
@@ -353,11 +361,13 @@ public class Fase01_PlayerController : PlayerBase
         {
             if (IsPlayerOnInitialPlatform && !IsJumping)
             {
+                PlayerRigidbody.isKinematic = false;
                 Run();
             }
 
             if (Checkpoints.Count == 2 && !JumpedMid && jumpstates == 1)
             {
+                PlayerRigidbody.isKinematic = false;
                 Jump(GetJumpVector(), ForceMode.VelocityChange);
                 JumpedMid = true;
                 jumpstates = 2;
@@ -386,7 +396,7 @@ public class Fase01_PlayerController : PlayerBase
     {
         string tag = other.transform.tag;
         string name = other.transform.name;
-
+        curretnPlataform = tag;
         //Debug.LogFormat("tag = {0}  name = {1}", tag, name);
 
         if(CollidablePlaces[tag])
@@ -410,6 +420,7 @@ public class Fase01_PlayerController : PlayerBase
     private void OnCollisionStay(Collision other)
     {
         string tag = other.transform.tag;
+        curretnPlataform = tag;
         bool onSimulation = GSReference.States[GSReference.getSimulationName()];
 
         if(CollidablePlaces[tag]) // If is colliding with authorized object
@@ -475,7 +486,8 @@ public class Fase01_PlayerController : PlayerBase
         _jumpForce = value;
     }
 
-    public void setMass(float value){
+    public void setMass(){
+        float value = (float)Math.Round((double)Random.Range(40.0f,60.0f),2);
         _mass = value;
     }
 
@@ -499,10 +511,6 @@ public class Fase01_PlayerController : PlayerBase
     }
     public void setJumpForce(string value){
         _jumpForce = ParseValue(value);
-    }
-
-    public void setMass(string value){
-        _mass = ParseValue(value);
     }
 
     public void setGravity(string value){

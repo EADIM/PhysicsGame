@@ -24,7 +24,7 @@ public class Fase01_SetValueOnCharacter : MonoBehaviour
             pcont.setGravity(inputField.text);
         }
         else if(attribute == 4){
-            pcont.setMass(inputField.text);
+            pcont.setMass();
         }
     }
 

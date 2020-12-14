@@ -108,6 +108,7 @@ public class Fase01_GameState : MonoBehaviour
         currentState = getStartName();
         previousState = getExplorationName();
         SwitchState(getStartName());
+        references.Player.GetComponent<Fase01_PlayerController>().setMass();
     }
 
 
@@ -188,6 +189,7 @@ public class Fase01_GameState : MonoBehaviour
 
     private void changeLost()
     {
+        references.Player.GetComponent<Fase01_PlayerController>().setMass();
         Player.GetComponent<Fase01_PlayerController>().Reset(Player.GetComponent<Fase01_PlayerController>().Checkpoints[Player.GetComponent<Fase01_PlayerController>().Checkpoints.Count - 1]);
         //playMessage(0); //Failure
         SwitchState(getExplorationName());
@@ -245,6 +247,7 @@ public class Fase01_GameState : MonoBehaviour
         Fase01_ChangePlayerPosition.canChangePosition = false;
         GameObject explanationContainer = Utils.GetChildWithName(Canvas.gameObject, "Explanation Container");
         explanationContainer.GetComponent<ToggleUIElement>().Show();
+        references.Player.GetComponent<Fase01_PlayerController>().setMass();
     }
 
 
