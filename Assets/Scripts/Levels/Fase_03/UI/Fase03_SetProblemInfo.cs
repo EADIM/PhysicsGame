@@ -57,11 +57,11 @@ public class Fase03_SetProblemInfo : MonoBehaviour
            "O objetivo desta fase é escolher a quantidade de rotações necessárias para que o motor levante o bloco a uma altura que o faça deslizar até o buraco e caia na posição correta.\n" + 
            "O bloco será puxado por uma corda inextensível de massa desprezível e que faz parte de um conjunto de polias ideais, conforme a figura.\n" +  "\n\n\n\n" + 
            sprites[0] + "\n\n\n\n\n" + 
-           "Há três polias no total, uma fixa, sendo na verdade um motor que irá puxar a corda. Uma polia móvel, para oferecer ganho mecânico, e uma última polia fixa para direcionar a força. Despreze a força de atrito nas polias.\n" + 
-           "Considere que o plano inclinado está a um ângulo de 45° com o piso.\n" + "\n\n\n\n" + 
+           "Há três polias no total, uma fixa (1), sendo na verdade um motor que irá puxar a corda. Uma polia móvel (2), para oferecer ganho mecânico, e uma última polia fixa (3) para direcionar a força. Despreze a força de atrito nas polias.\n" + 
+           "Considere que o plano inclinado de 40m está a um ângulo de 21° com o piso e que a base inicial em que a caixa se encontrava tem 4m de comprimento.\n" + "\n\n\n\n" + 
            sprites[1] + "\n\n\n\n\n" + 
-           "Finalizada as rotações do motor, a corda irá se romper fazendo com que bloco deslize pelo plano inclinado e pelo piso. O coeficiente de atrito dinâmico entre o bloco e a plataforma que ele está vale 0,5.\n" + 
-           "Caso o objeto ultrapasse o piso e caia, sua função será acertar o alvo que está a uma distância horizontal de 10m e uma distância vertical de 20m do piso. Despreze a resistência do ar.\n" + "\n\n\n\n" + 
+           "Finalizada as rotações do motor, a corda irá se romper fazendo com que bloco deslize pelo plano inclinado e pelo piso. O coeficiente de atrito dinâmico entre o bloco e a plataforma que ele está vale 0,3.\n" + 
+           "Caso o objeto ultrapasse o piso e caia, sua função será acertar o alvo que está a uma distância horizontal de 4,4m e uma distância vertical de 4,9m do piso. Despreze a resistência do ar.\n" + "\n\n\n\n" + 
            sprites[2] + "\n\n\n\n";
 
         textUI.text = info;

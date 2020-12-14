@@ -233,7 +233,7 @@ public class Fase02_PlayerController : PlayerBase_fase02
     }
     public void setBallMass(){
         Debug.Log("Cheguei");
-        int value = /*5*/Random.Range(3,10);
+        float value = (float)Math.Round((double)Random.Range(3.0f,10.0f),2);
         _ball_mass = value;
         setMassValue(_ball_mass);
     }

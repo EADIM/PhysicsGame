@@ -125,8 +125,8 @@ public class Fase03_GameState : MonoBehaviour
     public void ResetValues()
     {
         references.Player.GetComponent<Fase03_PlayerController>().StopAnimation("isPushing");
-        GameObject Fase03_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
-        Fase03_Timer.GetComponent<Fase03_Timer>().Reset();
+        //GameObject Fase03_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
+        //Fase03_Timer.GetComponent<Fase03_Timer>().Reset();
         resetTransform(references.Box, listPosition[0], references.Box.GetComponent<Rigidbody>());
         references.ObiSolver.GetComponent<RopeLengthController>().restoreRope();
 
@@ -236,6 +236,8 @@ public class Fase03_GameState : MonoBehaviour
     }
 
     public void tryAgain(){
+        GameObject Fase03_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
+        Fase03_Timer.GetComponent<Fase03_Timer>().Reset();
         ResetValues();
         references.Box.GetComponent<Fase03_BoxController>().setRadiusMotor();
         currentState = getStartName();

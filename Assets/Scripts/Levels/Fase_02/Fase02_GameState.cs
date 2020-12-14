@@ -123,8 +123,8 @@ public class Fase02_GameState : MonoBehaviour
 
     public void ResetValues()
     {
-        GameObject Fase02_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
-        Fase02_Timer.GetComponent<Fase02_Timer>().Reset();
+        //GameObject Fase02_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
+        //Fase02_Timer.GetComponent<Fase02_Timer>().Reset();
         references.Box.GetComponent<Fase02_BoxCollider>().colidiu = false;
         references.Player.GetComponent<Fase02_PlayerController>().setBallMass();
         Debug.Log("Inicial: " + listPosition[0].localPosition);
@@ -216,6 +216,8 @@ public class Fase02_GameState : MonoBehaviour
 
     public void tryAgain(){
         ResetValues();
+        GameObject Fase02_Timer =  Utils.GetChildWithName(Canvas.gameObject, "Timer");
+        Fase02_Timer.GetComponent<Fase02_Timer>().Reset();
         currentState = getStartName();
         previousState = getExplorationName();
         SwitchState(getStartName());
