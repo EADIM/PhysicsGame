@@ -25,10 +25,11 @@ public class animationStateControler : MonoBehaviour
             Ray raycast = Camera.main.ScreenPointToRay(Input.touches[0].position);
             RaycastHit hit;
             bool isActing = animator.GetBool(touchedHash);
-
+            Debug.Log("OOOOOI");
             if(Physics.Raycast(raycast, out hit))
             {
-                if(hit.collider.name == "Jammo_Player (1)" && !isActing)
+                Debug.Log("Oii");
+                if(hit.collider.name == "Jammo_Player" && !isActing)
                 {
                     animator.SetBool(touchedHash, true);
                 }
