@@ -175,7 +175,7 @@ public class Fase03_GameState : MonoBehaviour
     private void changeSimulation()
     {
         Debug.Log("Raio: " + Box.GetComponent<Fase03_BoxController>().Rounds);
-        if (Box.GetComponent<Fase03_BoxController>().Rounds <= 0.0f){
+        if (Box.GetComponent<Fase03_BoxController>().Rounds <= 0.0f || Box.GetComponent<Fase03_BoxController>().Rounds > 10.0f){
             string text = "Número de voltas inválido. Escolha valores entre 1 e 10.";
             ShowMessage(text, Canvas.gameObject, "Message Container", "Action Message", new Color(154.0f/255.0f,0,0,1));
             //Switch state to lost

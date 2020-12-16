@@ -254,14 +254,17 @@ public class Fase01_PlayerController : PlayerBase
         _acceleration = 0.0f;
         _jumpAngle = 0.0f;
         _timeJump = 0.05f;
-        
+        if (Checkpoints.Count == 0){
+            AddCheckpoint();
+        }
         Reset(Checkpoints[0]);
         Checkpoints.Clear();
     }
 
     public void Reset(Checkpoint ckp)
     {
-        IsMoving  = false;//Debug.Log("Reset() called.");
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        IsMoving  = false; //Debug.Log("Reset() called.");
         StopMovement();
         ResetAnimation();
         ResetValues(ckp);
@@ -273,7 +276,7 @@ public class Fase01_PlayerController : PlayerBase
         //Debug.Log("ResetPosition() called.");
 
         StopMovement();
-        PlayerRigidbody.isKinematic = true;
+        PlayerRigidbody.isKinematic = (IsPlayerOnInitialPlatform ? false : true);
         transform.position = ckp.getPosition();
         transform.rotation = ckp.getRotation();
         //PlayerRigidbody.isKinematic = false;
@@ -344,6 +347,7 @@ public class Fase01_PlayerController : PlayerBase
         {
             TimeSpanned += Time.deltaTime;
         }
+        Debug.Log(Checkpoints.Count);
     }
 
     private void FixedUpdate()

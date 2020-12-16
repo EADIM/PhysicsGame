@@ -69,7 +69,7 @@ public class Fase01_SetProblemInfo : MonoBehaviour
 
     private void SetText(){
 
-        Debug.Log(UnitScale);
+        //Debug.Log(UnitScale);
         string dIP = Mathf.Abs(DistanciaEntreInicialEPulo.z ).ToString(format);
         string dPM = Mathf.Abs(DistanciaEntrePuloEMeio.z ).ToString(format);
         string dMF = Mathf.Abs(DistanciaEntreMeioEFinal.z).ToString(format);

@@ -8,10 +8,13 @@ public class CraneController : MonoBehaviour {
 	ObiRopeCursor cursor;
 	ObiRope rope;
 
+	ObiSolver ObiSolver1;
+
 	// Use this for initialization
 	void Start () {
 		cursor = GetComponentInChildren<ObiRopeCursor>();
 		rope = cursor.GetComponent<ObiRope>();
+		ObiSolver1 = GetComponent<ObiSolver>();
 	}
 	
 	// Update is called once per frame
@@ -32,5 +35,10 @@ public class CraneController : MonoBehaviour {
 		if (Input.GetKey(KeyCode.D)){
 			transform.Rotate(0,-Time.deltaTime*15f,0);
 		}
+	}
+
+	public void turnOnGravity(){
+		ObiSolver1.parameters.gravity = new Vector3(0,-4,0);
+		//ObiSolver1.updateParameters();
 	}
 }

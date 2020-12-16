@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Fase03_References : MonoBehaviour
 {
-    /*public GameObject Seesaw;
-    public GameObject Seesaw_Base;
-    public GameObject Seesaw_Support;
-    public GameObject Box;
-    public GameObject Ball;*/
     public GameObject Player;
      public GameObject Box;
     public GameObject PlataformaInicial;

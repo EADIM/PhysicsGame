@@ -165,6 +165,13 @@ public class Fase02_GameState : MonoBehaviour
 
     private void changeSimulation()
     {
+        if (references.Box.GetComponent<Fase02_PlayerController>().Box_mass <= 0 || references.Box.GetComponent<Fase02_PlayerController>().Box_mass > 100 ){
+            string text = "Digite uma massa que esteja entre 1 e 100";
+            ShowMessage(text, Canvas.gameObject, "Message Container", "Action Message", new Color(154.0f/255.0f,0,0,1));
+            //Switch state to lost
+            SwitchState(getLostName());
+            return;
+        }
         ResumeUIElements();
         GameObject joysticks_container = Utils.GetChildWithName(Canvas.gameObject, "Joysticks Container");
         joysticks_container.GetComponent<ToggleUIElement>().Hide();

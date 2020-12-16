@@ -10,6 +10,7 @@ public class Fase03_BoxController : BoxBase_fase03
     public Fase03_References references; 
     public PhysicMaterial Physicsmaterial;
     public GameObject ObiSolver;
+    public GameObject ObiSolver1;
     public GameObject ObiRope;
     public float waitTime = 3.0f;
     private string finalPlace;
@@ -129,7 +130,7 @@ public class Fase03_BoxController : BoxBase_fase03
             StartCoroutine("movimento");
         }
     }
-    /**/IEnumerator movimento() 
+    IEnumerator movimento() 
     {
         Debug.Log(Mathf.Abs(transform.localPosition.x) + " @@@ " + finalPosition);
         float time = 0f;
@@ -138,7 +139,7 @@ public class Fase03_BoxController : BoxBase_fase03
             Up();
             yield return new WaitForSeconds(.02f);
         }
-
+        //ObiSolver1.GetComponent<CraneController>().turnOnGravity();
         Debug.Log("Altura final: " + transform.localPosition.x + " " + transform.localPosition.y + " " + transform.localPosition.z);
     
         StartMovementDown();
