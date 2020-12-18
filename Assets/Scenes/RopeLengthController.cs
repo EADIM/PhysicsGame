@@ -15,7 +15,7 @@ public class RopeLengthController : MonoBehaviour
 	private Vector3 pos;
 	private Quaternion rot;
 	public Fase03_References references;
-	public GameObject objRope;
+	private GameObject objRope;
 
 	void Start()
 	{
@@ -26,15 +26,12 @@ public class RopeLengthController : MonoBehaviour
 		rot = rope.transform.rotation;
 	}
 
-	void Update()
-	{
-		//Debug.Log(rope.restLength);
-	}
-
-	public void deleteRope(){
+	public bool deleteRope(){
 		if(rope.restLength > 80.0f){
 			cursor.ChangeLength(rope.restLength - speed * Time.deltaTime);
+			return false;
 		}
+		return true;
 	}
 
 	public void restoreRope(){

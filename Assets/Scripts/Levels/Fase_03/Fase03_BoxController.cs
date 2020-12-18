@@ -15,8 +15,9 @@ public class Fase03_BoxController : BoxBase_fase03
     public float waitTime = 3.0f;
     private string finalPlace;
     private float startPosition;
-    private float finalPosition;
+    public float finalPosition;
     public bool shouldGoDown = false;
+    private Fase03_GameState GSReference;
 
     [SerializeField]
     public override float Rounds
@@ -49,7 +50,7 @@ public class Fase03_BoxController : BoxBase_fase03
         set => _dynamic_Friction = value;
     }
 
-    public Rigidbody rb;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -57,27 +58,13 @@ public class Fase03_BoxController : BoxBase_fase03
         startPosition = Mathf.Abs(transform.localPosition.x);
         Debug.Log("Comeca: " + startPosition);
         rb = GetComponent<Rigidbody>();   
+        GSReference = references.GameState.GetComponent<Fase03_GameState>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if(references.GameState.GetComponent<Fase03_GameState>().States[references.GameState.GetComponent<Fase03_GameState>().getSimulationName()]){
-            if (moveUp){
-                float horizontalInput =-(transform.localScale.x*5f);
 
-                transform.position = transform.position + new Vector3(horizontalInput*movementSpeed*Time.deltaTime, 0, 0);
-
-                //Debug.Log(transform.position);
-            }
-            else if (moveDown){
-                float horizontalInput =(transform.localScale.x*5f);
-
-                transform.position = transform.position + new Vector3(horizontalInput*movementSpeed*Time.deltaTime, 0, 0);
-
-                Debug.Log(transform.position);
-            }
-        }*/
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -85,7 +72,7 @@ public class Fase03_BoxController : BoxBase_fase03
         string tag = other.transform.tag;
 
         if(name == "Lost Sensor"){
-            references.GameState.GetComponent<Fase03_GameState>().SwitchState(references.GameState.GetComponent<Fase03_GameState>().getLostName());
+            GSReference.SwitchState(GSReference.getLostName());
         }
         else if(name == "Target"){
             StartCoroutine("isOnTarget", "Piso do meio");
@@ -112,10 +99,10 @@ public class Fase03_BoxController : BoxBase_fase03
             yield return new WaitForSeconds(.02f);
         }
         if (finalPlace != name && finalPlace=="Target"){
-            references.GameState.GetComponent<Fase03_GameState>().SwitchState(references.GameState.GetComponent<Fase03_GameState>().getWinName());
+            GSReference.SwitchState(GSReference.getWinName());
         }
         else{
-            references.GameState.GetComponent<Fase03_GameState>().SwitchState(references.GameState.GetComponent<Fase03_GameState>().getLostName());
+            GSReference.SwitchState(GSReference.getLostName());
         }
     }
 
@@ -125,7 +112,7 @@ public class Fase03_BoxController : BoxBase_fase03
 
     public void StartMovementUp()
     {
-        if(references.GameState.GetComponent<Fase03_GameState>().States[references.GameState.GetComponent<Fase03_GameState>().getSimulationName()]){
+        if(GSReference.States[GSReference.getSimulationName()]){
             calculateVariables();
             StartCoroutine("movimento");
         }
@@ -136,6 +123,9 @@ public class Fase03_BoxController : BoxBase_fase03
         float time = 0f;
         for (; /*time <= waitTime*/Mathf.Abs(transform.localPosition.x) < finalPosition; time+= 0.02f) 
         {
+            if (transform.localPosition.x + 407.8317 < 2){
+                finalPosition -= 2*movementSpeed;
+            }
             Up();
             yield return new WaitForSeconds(.02f);
         }
@@ -147,8 +137,9 @@ public class Fase03_BoxController : BoxBase_fase03
 
     void Up(){
         float horizontalInput = -transform.localScale.x;
-        ObiSolver.GetComponent<RopeLengthController>().deleteRope();
-        transform.position = transform.position + new Vector3(horizontalInput*movementSpeed*Time.deltaTime, 0, 0);
+        bool endOfRope = ObiSolver.GetComponent<RopeLengthController>().deleteRope();
+        if(!endOfRope)
+            transform.position = transform.position + new Vector3(horizontalInput*movementSpeed*Time.deltaTime, 0, 0);
     }
 
     void calculateVariables(){
